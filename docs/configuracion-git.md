@@ -2,6 +2,6 @@
 
 A continuación dos capturas acerca de cómo está configurado git
 
-!(img/gitconfig.png)
+![fichero de configuración](img/gitconfig.png)
 
-!(img/gitremote.png)
+![con git remote](img/gitremote.png)
