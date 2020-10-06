@@ -11,4 +11,5 @@ Como lenguaje pretendo usar node
 
 ## Enlaces de interes
 
-[Configuración del git](docs/configuracion-git.md)
+- [Configuración del git](docs/configuracion-git.md)  
+- [Descripción de las herramientas](docs/herramientas.md) que voy a usar
