@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/blancaazz/Lecturas/issues"
   },
-  "homepage": "https://github.com/blancaazz/Lecturas#readme"
+  "homepage": "https://github.com/blancaazz/Lecturas#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
