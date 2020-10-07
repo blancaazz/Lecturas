@@ -4,8 +4,12 @@ class libro{
         
     }
 
+    //método que registrará un libro determinado
     registrarLibro(nombre, autora, comentario, puntuacion){
-        throw new Error('Not implemented method');
+        
     }
 }
+
+
+
     
