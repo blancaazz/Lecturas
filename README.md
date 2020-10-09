@@ -14,6 +14,11 @@ Para ello, la clase principal creada hasta el momento es [libro.js](src/libro.js
 
 Como lenguaje pretendo usar node
 
+## Historias de usuario
+
+De momento solo he creado una [historia de usuaria](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro
+
+
 ## Enlaces de interes
 
 - [Configuración del git](docs/configuracion-git.md)  
