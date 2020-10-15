@@ -1,13 +1,10 @@
 class libro{
 
-    constructor(){
+    constructor(nombre, autora, comentario, puntuacion){
         
     }
 
-    //método que registrará un libro determinado
-    registrarLibro(nombre, autora, comentario, puntuacion){
-        
-    }
+
 }
 
 
