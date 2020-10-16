@@ -1,7 +1,7 @@
 const Libro = require("./Libro.js");
 
 class Registro_libros{
-
+    
 
     constructor(){
         this.libros = new Array();
