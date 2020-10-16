@@ -7,9 +7,22 @@ class Libro{
         this.puntuacion = puntuacion;
     }
 
+
     getNombre(){
         return this.nombre;
     }
+    getAutora(){
+        return this.autora;
+    }
+    getComentario(){
+        return this.comentario;
+    }
+    getPuntuacion(){
+        return this.puntuacion;
+    }
+
+
+
 
     as_string(){
         return this.nombre + " - " + this.autora + " - " + this.comentario + " - " + this.puntuacion;

@@ -7,9 +7,19 @@ class Registro_libros{
         this.libros = new Array();
     }
 
-    registrarLibro(nombre, autora, comentario, puntuacion){
+    registrarLibroDatos(nombre, autora, comentario, puntuacion){
         var libro = new Libro(nombre, autora, comentario, puntuacion);
         this.libros.push(libro);
+    }
+
+    registrarLibro(libro){
+        if(libro instanceof Libro){
+        var l = new Libro(libro.getNombre(), libro.getAutora(), libro.getComentario(), libro.getPuntuacion());
+        this.libros.push(l);
+        }
+
+        var l = new Libro(libro.nombre, libro.autora, libro.comentario, libro.puntuacion);
+        this.libros.push(l);
     }
     
     mostrarInformacion(nombre_libro){
@@ -18,6 +28,8 @@ class Registro_libros{
         return libro.as_string();
     }
 }
+
+module.exports = Registro_libros;
 
 r = new Registro_libros();
 r.registrarLibro("hehe", "hihi", "hhf", "e");
