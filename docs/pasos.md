@@ -9,3 +9,5 @@ Una vez visto que los tests funcionan (de momento son un poco básicos, ya luego
 Esta última ejecutará la clase principal pero como de momento no está muy desarrollada, lo que hará será imprimir por pantalla información sobre un libro y ya está. 
 
 Luego, modifico el iv.yaml para añadir lo que pide el projecto.
+
+He añadido también otra historia de usuario.
