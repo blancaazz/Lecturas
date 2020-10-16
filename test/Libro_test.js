@@ -17,6 +17,8 @@ describe("Libro", function(){
         });
     });
 });
+
+
 /*
 var nuevo_libro = new Libro("Momo", "Michael Ende", "Me ha gustado mucho", 8);
 assert(nuevo_libro, "Creado Libro");
