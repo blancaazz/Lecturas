@@ -1,1 +1,4 @@
-entidad: src/libro.js
+entidad: src/Registro_libros.js
+lenguaje: Javascript
+test: test/Registro_test.js
+taskfile: Makefile
