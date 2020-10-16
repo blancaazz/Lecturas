@@ -14,7 +14,8 @@ class Registro_libros{
     
     mostrarInformacion(nombre_libro){
         var libro = this.libros.find(nombre => nombre_libro)
-        console.log(libro.getNombre());
+        //console.log(libro.getNombre());
+        return libro.as_string();
     }
 }
 

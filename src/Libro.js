@@ -11,6 +11,9 @@ class Libro{
         return this.nombre;
     }
 
+    as_string(){
+        return this.nombre + " - " + this.autora + " - " + this.comentario + " - " + this.puntuacion;
+    }
 
 }
 
