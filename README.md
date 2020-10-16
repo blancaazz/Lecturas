@@ -21,9 +21,8 @@ Para ejecutar los tests:
 Para ejecutar la aplicación:
 
 - make run  
-  
-    
-El avance del proyecto se estructura por hitos, corresponden a milestone.  
+
+
 [Aquí](https://github.com/blancaazz/Lecturas/milestones?with_issues=no) está el historial de milestone que tiene el projecto ahora mismo
 
 ## Historias de usuario
