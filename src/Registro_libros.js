@@ -24,7 +24,7 @@ class Registro_libros{
     
     mostrarInformacion(nombre_libro){
         var libro = this.libros.find(nombre => nombre_libro)
-        //console.log(libro.getNombre());
+    //  console.log(libro.getNombre());
         return libro.as_string();
     }
 }
@@ -32,5 +32,5 @@ class Registro_libros{
 module.exports = Registro_libros;
 
 r = new Registro_libros();
-r.registrarLibro("hehe", "hihi", "hhf", "e");
-r.mostrarInformacion("hehe");
+r.registrarLibroDatos("Momo", "Ende", "Es un buen libro", "8");
+console.log(r.mostrarInformacion("Momo"));
