@@ -16,14 +16,16 @@ Para instalar la aplicación usamos:
 
 Para ejecutar los tests:
 
-- make test
+- make tests
 
 Para ejecutar la aplicación:
 
 - make run  
 
 
-[Aquí](https://github.com/blancaazz/Lecturas/milestones?with_issues=no) está el historial de milestone que tiene el projecto ahora mismo
+[Aquí](https://github.com/blancaazz/Lecturas/milestones?with_issues=no) está el historial de milestone que tiene el projecto ahora mismo  
+
+Como gestor de tareas estoy usando make y para los tests mocha. Aquí más información sobre las [herramientas](docs/herramientas.md)
 
 ## Historias de usuario
 

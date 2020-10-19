@@ -6,6 +6,5 @@
 
 - Para los test voy a usar Mocha, que por lo que he leído es una de las opciones más populares y hay bastante información en internet sobre este marco de testeo.
 
-- Voy a usar también el framework web Express. Por estar muy extendido y ser sencillo de usar y entender. 
 
 - Para la base de datos voy a usar MongoDB para aprender a usar la herramienta y porque me parece una forma eficiente de organización de los datos para este projecto.
