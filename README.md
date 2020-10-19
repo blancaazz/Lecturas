@@ -14,7 +14,7 @@ Para instalar la aplicación usamos:
 
 - make install
 
-Para ejecutar los tests:
+Para ejecutar los- Voy a usar también el framework web Express. Por estar muy extendido y ser sencillo de usar y entender. - Voy a usar también el framework web Express. Por estar muy extendido y ser sencillo de usar y entender. tests:
 
 - make tests
 
