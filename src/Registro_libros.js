@@ -16,10 +16,13 @@ class Registro_libros{
     
     //Corresponde a la hu2
     /*Dado el nombre de un libro devolvemos la información sobre ese libro*/
-    mostrarInformacion(nombre_libro){
-        var libro = this.libros.find(nombre => nombre_libro)
-    //  console.log(libro.getNombre());
-        return libro.as_string();
+    mostrarInformacion(nombre_libro){    
+        var libro = this.libros.find(libroA => libroA.nombre === nombre_libro)
+        var resultado = "";
+        if(libro != undefined){
+            resultado = libro.as_string();
+        }
+        return resultado;
     }
 
 
