@@ -28,8 +28,10 @@ Para ejecutar la aplicación:
 
 Como gestor de tareas estoy usando make y para los tests mocha.  
 - [Makefile](Makefile)
+- Para los tests he implementado la clase [Registro_test.js](test/Registro_test.js), dentro del directorio test, de forma que compruebe que se lleven a cabo las dos historias de usuario propuestas.  
+
 Aquí más información sobre las justificación de las [herramientas](docs/herramientas.md).  
-Para los tests he implementado la clase [Registro_test.js](test/Registro_test.js), dentro del directorio test, de forma que compruebe que se lleven a cabo las dos historias de usuario propuestas.
+
 
 ## Historias de usuario
 
