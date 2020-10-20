@@ -11,3 +11,5 @@ Esta última ejecutará la clase principal pero como de momento no está muy des
 Luego, modifico el iv.yaml para añadir lo que pide el projecto.
 
 He añadido también otra historia de usuario.
+
+Para la historia de usuaria 1 el registro de libros, he hecho los tests teniendo en cuenta que la clase libro es correcta. Por ejemplo, el registro de libros no comprueba si el libro creado ha sido creado de manera correcta (pues pienso que es competencia de los tests sobre la clase libro).
