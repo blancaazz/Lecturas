@@ -37,7 +37,9 @@ Aquí más información sobre las justificación de las [herramientas](docs/herr
 He creado [este dockerfile](Dockerfile) y la justificación del contenedor base, junto con las buenas prácticas que he llevado a cabo se encuentran en [este documento](docs/justificacion_dockerfile.md).  
 Es un contenedor cuya función es testear el código.  
 
-También me he creado una cuenta de DockerHub, la he asociado a mi github y lo he subido la imagen del contenedor a DockerHub. Por lo que para ejecutarlo, simplemente tenemos que bajarnos el repositorio, luego efectuar este comando:
+También me he creado una cuenta de DockerHub, la he asociado a mi github y lo he subido la imagen del contenedor a DockerHub.   
+Al conectarlo con mi GitHub, lo he configurado para que cuando hago algún push se actualice automáticamente la imagen de DockerHub.  
+Por lo que para ejecutarlo, simplemente tenemos que bajarnos el repositorio, luego efectuar este comando:
 - docker pull blancaazz/lecturas  
 Una vez ya tengamos el contenedor, para ejecutarlo y hacer los tests sería: 
 - docker run -t -v `pwd`:/test blancaazz/lecturas
