@@ -29,7 +29,8 @@ De estas tres opciones, he decidido quedarme con la segunda pues es significativ
 
 - A nivel de instrucciones, uso una imagen oficial para el FROM, además desde [las buenas prácticas](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) se recomienda usar alpine, que es lo que estoy usando.   
 
-- El Run que uso no es demasiado complejo y se puede leer en la misma línea sin problemas. Además hace las distintas instrucciones en la misma línea, lo cual es bastante recomendable para que si modificamos algo, ejecute todas las instrucciones. Nos aseguramos que Dockerfile instala la última versión del paquete que sea (RUN apk update && apk add make).  
+- El Run que uso no es demasiado complejo y se puede leer en la misma línea sin problemas.  
+ Además el hecho de hacer las distintas instrucciones en la misma línea, es bastante recomendable para que si modificamos algo, ejecute todas las instrucciones. Nos aseguramos que Dockerfile instala la última versión del paquete que sea (RUN apk update && apk add make).  
 
 - Uso CMD["make", "test"] para ejecutar el software contenido en la imagen, en este caso el task runner junto con la instrucción test.  
 
@@ -40,4 +41,4 @@ lo estoy usando que es una copia sencilla de ficheros locales, COPY hace justame
 
 - Algo bastante importante también es que el servicio se ejecute sin privilegios, para ello se usa la instrucción USER para cambiar a un usuario no root. La imagen por defecto de [node:14-alpine](https://github.com/nodejs/docker-node/blob/7b11db1cab459beb96448e18ec421ec952fa0491/14/alpine3.10/Dockerfile) trae un usuario alternativo al root que se llama node y es el que yo estoy usando. 
 
-- Para terminar, también uso WORKDIR, por hace más claro todo el código y determinar así el directorio donde se está trabajando. 
+- Para terminar, también uso WORKDIR /test, por hace más claro todo el código y determinar así el directorio donde se está trabajando. 
