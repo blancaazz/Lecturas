@@ -15,7 +15,7 @@ COPY Makefile ./
 COPY package*.json ./
 
 #hacemos con el task runner una instalación del projecto
-RUN apk update && apk add make && make install
+RUN apk update && apk add make && npm -g install mocha && make install
 
 ENV PATH=/node_modules/.bin:$PATH
 
