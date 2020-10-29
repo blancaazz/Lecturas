@@ -17,7 +17,6 @@ COPY package*.json ./
 #hacemos con el task runner una instalación del projecto
 RUN apk update && apk add make && npm -g install mocha && make install
 
-ENV PATH=/node_modules/.bin:$PATH
 
 #al final, para poner un usuario distinto a root
 #la imagen de node tiene el usuario node como opción alternativa al root
