@@ -20,7 +20,7 @@ Para instalar la aplicación primero habría que descargarse el repositorio y lu
 
 Para ejecutar los tests:
 
-- make tests
+- make test
 
 Para ejecutar la aplicación:
 
@@ -42,13 +42,15 @@ Al conectarlo con mi GitHub, lo he configurado para que cuando hago algún push 
 Por lo que para ejecutarlo, simplemente tenemos que bajarnos el repositorio, luego efectuar este comando:
 - docker pull blancaazz/lecturas  
 Una vez ya tengamos el contenedor, para ejecutarlo y hacer los tests sería: 
-- docker run -t -v `pwd`:/test blancaazz/lecturas
+- docker run -t -v `pwd`:/test blancaazz/lecturas  
 
+He añadido también documentación y justificación sobre el uso de DockerHub y un registro alternativo en el mismo [documento de antes](docs/justificacion_dockerfile.md)
 
 ## Historias de usuario
 
 [HU1](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro  
-[HU2](https://github.com/blancaazz/Lecturas/issues/5) que consiste en poder ver la información correspondiente a un libro
+[HU2](https://github.com/blancaazz/Lecturas/issues/5) que consiste en poder ver la información correspondiente a un libro  
+[HU3](https://github.com/blancaazz/Lecturas/issues/17) que consiste en ver una lista de libros que se haya guardado
 
 
 
