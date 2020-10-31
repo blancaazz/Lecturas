@@ -62,4 +62,14 @@ describe("Registro libro", function(){
         });
     });
 
+    //Corresponde a la historia de usuaria 3: devolver todos los libros
+    describe("Devolver todos los libros (HU3)", function(){
+        it("Debería devolver todos los libros", function(){
+            var lista;
+            lista = registro.listaLibros();
+            assert.equal(lista[0].as_string(), libro_momo.as_string(), "Primer libro correcto");
+            assert.equal(lista[1].as_string(), libro_habitacion.as_string(), "Segundo libro correcto");
+        });
+    });
+
 });
