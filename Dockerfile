@@ -24,4 +24,4 @@ USER node
 
 #para que cuando se cree y ejecute, se realice la instrucción de ejecutar
 #los tests
-CMD ["make", "tests"]
+CMD ["make", "test"]
