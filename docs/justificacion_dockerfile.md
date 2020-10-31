@@ -42,3 +42,18 @@ lo estoy usando que es una copia sencilla de ficheros locales, COPY hace justame
 - Algo bastante importante también es que el servicio se ejecute sin privilegios, para ello se usa la instrucción USER para cambiar a un usuario no root. La imagen por defecto de [node:14-alpine](https://github.com/nodejs/docker-node/blob/7b11db1cab459beb96448e18ec421ec952fa0491/14/alpine3.10/Dockerfile) trae un usuario alternativo al root que se llama node y es el que yo estoy usando. 
 
 - Para terminar, también uso WORKDIR /test, por hace más claro todo el código y determinar así el directorio donde se está trabajando. 
+
+## Justificación de la configuración DockerHub
+
+Me creé una cuenta de DockerHub con el correo de la ugr y el id blancaazz. De lo primero que hice fue ligarla a la cuenta de github.  
+De ahí me logueé desde la terminal con docker login. Y ya pude subir el repositorio a DockerHub:
+
+![repositorios](img/dockerhub1.png)  
+
+Y desde ahí, en el apartado Build, lo asocié al repositorio de github Lecturas para que con cada push se actualice el contenido del Dockerfile, documentación, etc...
+
+![automates builds](img/dockerhub2.png)
+
+De hecho, aquí se ven las actualizaciones que se han producido de esta manera:  
+ 
+![builds](img/dockerhub3.png)
