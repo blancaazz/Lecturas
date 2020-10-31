@@ -25,6 +25,11 @@ class Registro_libros{
         return resultado;
     }
 
+    //Corresponde a la hu3
+    /*Devuelve todos los libros*/
+    listaLibros(){
+        return this.libros
+    }
 
     //funciones a parte:
 
