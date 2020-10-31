@@ -21,7 +21,12 @@ Ahora tocaría probar con node:<version>-slim:
 Dice que no contiene los paquetes comunes y solo contiene lo necesario para ejecutar node. Al ejecutarlo efectivamente, tampoco incluye make pero, además, me da un fallo que no consigo solucionar.
 
 
-De estas tres opciones, he decidido quedarme con la segunda pues es significativamente más pequeña y funciona bien. 
+De estas tres opciones, he decidido quedarme con la segunda pues es significativamente más pequeña y funciona bien. También está bastante recomendada por las buenas prácticas de Dockerfile.   
+Con respecto a la versión he escogido la 14 para probar inicialmente porque es de las últimas y pienso que tiene que estar más actualizada, pero voy a probar otras para hacer una comparativa de tamaños y velocidades:  
+Probando de primera con estas dos otras versiones:  
+#FROM node:12.19.0-alpine3.10  
+#FROM node:10.23.0-alpine3.10  
+Me dan un fallo tal que Error: Cannot find module 'worker_threads'. Y tiene sentido pues mi versión de node es la v14.13.0, entonces creo que será algún tipo de incompatibilidad por trarse de una versión tan baja. He encontrado en internet una posible manera de solucionar ese error pero creo que es más interesante y conveniente usar la versión 14.  
 
 ## Buenas prácticas
 
