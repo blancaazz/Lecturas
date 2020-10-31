@@ -66,7 +66,11 @@ Para ello, primero me he creado una cuenta y he ido siguiendo estos pasos:
 ![vercel](img/vercel.png)
 ![vercel2](img/vercel2.png)
 ![vercel3](img/vercel3.png)
-![vercel4](img/vercel4.png)
+![vercel4](img/vercel4.png)  
 He escogido subir solamente el repositorio correspondiente al projecto. Luego he tenido que configurar un par más de opciones y ya se sube: 
-![vercel5](img/vercel5.png)
-Voy a probar ahora a actualizar el repositorio y pushearlo para ver si efectivamente se actualiza automáticamente.
+![vercel5](img/vercel5.png)  
+Voy a probar ahora a actualizar el repositorio y pushearlo para ver si efectivamente se actualiza automáticamente.  
+![vercel6](img/vercel6.png)  
+Vemos que sí, que se ha actualizado también en vercel cuando he subido la nueva versión a github.      
+  
+Ahora tenemos el proyecto visible desde [aquí](https://lecturas.vercel.app/)
