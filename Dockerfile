@@ -3,10 +3,8 @@ FROM node:14.14.0-alpine3.10
 
 LABEL maintainer="blanluja@gmail.com"
 
-#establezco el directorio de trabajo en el home de node
-#en una carpeta llamada test
-#WORKDIR /home/node/test
-#para pasar los test voy a crearla directamente en /test:
+#establezco el directorio de trabajo 
+#para pasar los test directamente en /test:
 WORKDIR /test
 
 #copio el task runner, dependencias del projecto
