@@ -1,0 +1,8 @@
+language:
+    - node
+
+install:
+    - docker pull blancaazz/lecturas
+
+script:
+    - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
