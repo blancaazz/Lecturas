@@ -1,5 +1,5 @@
 language:
-    - node
+    - minimal
 
 install:
     - docker pull blancaazz/lecturas
