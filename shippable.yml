@@ -1,5 +1,5 @@
 build:
-    pre_ci_boot
+    pre_ci_boot:
         image_name: blancaazz/lecturas
         pull:   true
         options:    -v `pwd`:/test blancaazz/lecturas
