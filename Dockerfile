@@ -13,7 +13,9 @@ COPY Makefile ./
 COPY package*.json ./
 
 #hacemos con el task runner una instalación del projecto
-RUN apk update && apk add make && npm -g install mocha && make install
+#RUN apk update && apk add make && npm -g install mocha && make install
+RUN apk update && apk add make bash && npm -g install mocha && make install
+
 
 
 #al final, para poner un usuario distinto a root
