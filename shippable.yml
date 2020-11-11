@@ -1,4 +1,8 @@
+language: none
+
 build:
+    pre_ci:
+        - docker build -t blancaazz/lecturas:latest
     pre_ci_boot:
         image_name: blancaazz/lecturas
         image_tag: latest
