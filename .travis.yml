@@ -1,6 +1,6 @@
 #utilizamos el lenguaje minimal
 language:
-    - generic
+    - minimal
 
 #$TRAVIS_BUILD_DIR es la variable de entorno que da la dirección absoluta al directorio
 #donde el repositorio ha sido copiado
