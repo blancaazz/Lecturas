@@ -13,9 +13,9 @@ COPY Makefile ./
 COPY package*.json ./
 
 #hacemos con el task runner una instalación del projecto
-#RUN apk update && apk add make && npm -g install mocha && make install
+RUN apk update && apk add make && npm -g install mocha && make install
 #RUN apk update && apk add make git ssh-agent python2.7 jq1.5 && npm -g install mocha && make install
-RUN apk update && apk add apt-get && npm -g install mocha && make install
+#RUN apk update && apk add apt-get && npm -g install mocha && make install
 
 
 
