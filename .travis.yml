@@ -1,5 +1,5 @@
 language:
-    - minimal
+    - generic
 
 install:
     - docker pull blancaazz/lecturas
