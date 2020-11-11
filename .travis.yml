@@ -1,5 +1,5 @@
 language:
-    - minimal
+    - generic
 
 script:
     - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
