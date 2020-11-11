@@ -1,12 +1,12 @@
 language: none
 
 build:
-    pre_ci:
-        - docker build -t blancaazz/lecturas:latest .
-    pre_ci_boot:
-        image_name: blancaazz/lecturas
-        image_tag: latest
-        pull: true
-        env: FOO=bar
-        options: "-e HOME=/ -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas"
+    ci:
+        - docker run -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas
+    # pre_ci_boot:
+    #     image_name: blancaazz/lecturas
+    #     image_tag: latest
+    #     pull: true
+    #     env: FOO=bar
+    #     options: "-e HOME=/ -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas"
         
