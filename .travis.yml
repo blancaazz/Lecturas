@@ -1,5 +1,9 @@
+#utilizamos el lenguaje minimal
 language:
     - generic
 
+#$TRAVIS_BUILD_DIR es la variable de entorno que da la dirección absoluta al directorio
+#donde el repositorio ha sido copiado
+#Nos descargamos y ejecutamos directamente el contenedor
 script:
     - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
