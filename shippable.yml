@@ -3,5 +3,5 @@ build:
         image_name: blancaazz/lecturas
         image_tag: latest
         pull: true
-        options: "-t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas"
+        options: "-e HOME=/root -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas"
         
