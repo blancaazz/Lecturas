@@ -1,8 +1,5 @@
 language:
-    - generic
-
-install:
-    - docker pull blancaazz/lecturas
+    - minimal
 
 script:
     - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
