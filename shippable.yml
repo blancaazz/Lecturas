@@ -3,4 +3,4 @@ build:
         image_name: blancaazz/lecturas
         image_tag: latest
         pull: true
-        options: -v `pwd`:/test blancaazz/lecturas
+        options: -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas
