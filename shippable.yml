@@ -3,5 +3,6 @@ build:
         image_name: blancaazz/lecturas
         image_tag: latest
         pull: true
+        env: FOO=bar
         options: "-e HOME=/root -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas"
         
