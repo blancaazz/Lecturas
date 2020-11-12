@@ -2,8 +2,10 @@ language: node_js
 
 build:
     ci:
-        - docker build -t cont_lecturas .
-        - docker run -t -v .:/test cont_lecturas
+        - npm -g install mocha
+        - make install
+        - make test
+
         #- docker run -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas
     # pre_ci_boot:
     #     image_name: blancaazz/lecturas
