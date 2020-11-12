@@ -10,8 +10,9 @@ env:
 build:
     ci:
         - npm -g install istanbul
-        - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --ui=bdd --reporter=xunit-file
-        - ./node_modules/.bin/istanbul report cobertura --dir shippable/codecoverage/
+        - npm --reporter-option output=shippable/testresults/result.xml test
+        # - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --ui=bdd --reporter=xunit-file
+        # - ./node_modules/.bin/istanbul report cobertura --dir shippable/codecoverage/
 # build:
 #     ci:
 #         - npm -g install mocha
