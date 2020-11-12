@@ -65,5 +65,18 @@ Al ejecutar de nuevo el fichero definitivo sale que tarda un tiempo de [23 segun
 Para [Shippable](http://docs.shippable.com/) también podremos registrarnos directamente con la cuenta de GitHub.  
 Ahora vamos a activar nuestro repositorio dentro de Shippable.   
 Una vez activado el repositorio lo siguiente es crear un fichero shippable.yaml  
-La dinámica de Shippable es que ejecuta código dentro de una build machine, en esa build machine contruye un contenedor, que depende del lenguage es uno por defecto. Luego establece el entorno, clona el repositorio y ya ejecuta el código que tú le pongas dentro de ese contenedor. 
-Lo primero que he intentado ha sido probar a "sobreescribir" ese contenedor, es decir, que en vez de ejecutar el por defecto ejecute el mío pero me ha dado bastantes fallos y no sé hasta que punto tiene sentido. Ya que va a intentar clonar el repositorio dentro del contenedor y en realidad el contenedor es autosuficiente, no necesita que se le clone nada, ni se ejecute nada dentro, más allá de lo que tiene ya programado.
+La dinámica de Shippable es que ejecuta código dentro de una build machine y en esa build machine contruye un contenedor. Luego se establece el entorno, se clona el repositorio y ya ejecuta el código que tú le pongas dentro de ese contenedor. 
+Lo primero que he intentado ha sido probar a "sobreescribir" ese contenedor, es decir, que en vez de ejecutar el por defecto ejecute el mío pero me ha dado bastantes fallos y no sé hasta que punto tiene sentido. Ya que va a intentar clonar el repositorio dentro del contenedor y en realidad el contenedor es autosuficiente, no necesita que se le clone nada, ni se ejecute nada dentro, más allá de lo que tiene ya programado.  
+Luego he intentado que ejecute el contenedor de Dockerfile una vez dentro del contenedor por defecto, pero me da una serie de fallos que no consigo resolver. Así que he decidido probar a hacer esto sin el contenedor de Dockerfile y directamente poner la instalación y ejecución de test con el gestor npm. Para esto en realidad hacen falta muy pocas líneas de código pues poniendo el lenguaje node_js, se ejecuta por defecto npm install y npm test. El tiempo que tarda en ejecutarse son 27 segundos.
+Es una solución un poco sosa pues ni siquiera aparecen los test en la parte de test report de Shippable y solo aparecen en el [console](https://app.shippable.com/github/blancaazz/Lecturas/runs/39/1/console). Intentaré perfeccionarla para otro hito pero por ahora por lo menos es funcional y detecta correctamente si se pasan o no los tests.  
+He encontrado Shippable como una plataforma un tanto más complicada de usar que Travis. También a nivel de documentación y de ejemplos me ha resultado más difícil, le he echado bastante tiempo y con pocos resultados. Mientras que con travis prácticamente de primeras conseguía hacer funcionar el código.
+
+## Uso del gestor de tareas
+
+Uso el gestor de tareas en travis a través del contenedor en el cual se usa make install, make test.
+En cambio, en shippable como me daban bastantes fallos de otra manera no lo he hecho con mi Makefile sino usando npm. 
+
+## Aprovechamiento del contenedor Docker
+
+En travis he utilizado directamente el contenedor y no he tenido que hacer ninguna adaptación, tal cual estaba configurado funcionaba bien.  
+A la hora de configurar Shippable si que lo he toqueteado intentando que funcionase, instalando paquetes adicionales pero al no conseguir que funcionara, lo he dejado tal como estaba previamente. 
