@@ -31,6 +31,16 @@ class Registro_libros{
         return this.libros
     }
 
+    //Corresponde a la hu4
+    /*Borra el libro que se le pasa
+    Se hace teniendo en cuenta que no puede haber libro repetido*/
+    borrarLibro(libro){
+        if(libro instanceof Libro){
+            var num = this.libros.findIndex(libro);
+            libros.splice(num, num);
+        }
+    }
+
     //funciones a parte:
 
     getUltimoLibro(){
