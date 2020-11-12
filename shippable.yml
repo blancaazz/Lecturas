@@ -2,7 +2,9 @@ language: none
 
 build:
     ci:
-        - docker run -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas
+        - docker build -t cont_lecturas .
+        - docker run -t -v $SHIPPABLE_BUILD_DIR:/test cont_lecturas
+        #- docker run -t -v $SHIPPABLE_BUILD_DIR:/test blancaazz/lecturas
     # pre_ci_boot:
     #     image_name: blancaazz/lecturas
     #     image_tag: latest
