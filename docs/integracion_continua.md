@@ -6,23 +6,26 @@ El primer paso es el registro en Travis, que va a ser mediante la cuenta de gith
 He seleccionado el repositorio del projecto (Lecturas), que es el que me interesa. Y ya lo tenemos
 ![travis4](img/travis4.png)
 
-Resumiendo, eL primer paso es activar el repositorio de Github y el segundo es añadir el fichero .travis.yml al repositorio. Este fichero contiene datos de la configuración. Yo para seguir con la continuidad del projecto, voy a configurar el fichero de manera que haga uso del Dockerfile creado en el hito anterior.
-En principio el fichero [.travis.yml](.travis.yml) contiene el siguiente código:
+Resumiendo, el primer paso es activar el repositorio de Github y el segundo es añadir el fichero .travis.yml al repositorio. Este fichero contiene datos de la configuración. Yo para seguir con la continuidad del projecto, voy a configurar el fichero de manera que haga uso del Dockerfile creado en el hito anterior.
+Al principio escribí el siguiente código en el fichero [.travis.yml](.travis.yml):
 
-language:
+```
+language:  
     - node
 
-install:
+install:  
     - docker pull blancaazz/lecturas
 
-script:
+script:  
     - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
+```
 
-Simplemente se basa en descargar la imagen que previamente se subió a DockerHub y ejecutarla de manera que haga los test también programados con anterioridad.
+Que simplemente se basa en descargar la imagen que previamente se subió a DockerHub y ejecutarla de manera que haga los test también programados con anterioridad.
 ![travis5](img/travis5.png).
 
-Voy a probar ahora a modificar el lenguaje. Habiendo escrito node lo que he hecho ha sido usar la última versión estable de Node.js. Esto es interesante porque es el lenguaje que uso en el projecto pero en realidad si leemos [esta página](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/) podemos llevarnos la imagen general de que el default install sería npm install, el default script npm test. Y en realidad, yo no quiero hacer eso directamente. Sino hacerlo a través del contenedor y en el contenedor se va a instalar todo lo necesario para hacerlo, por lo tanto no aprovecharía todo lo que esta imagen ofrece. Así que vamos a probar otra opción que es utilizar una imagen más genérica (que no sea de un lenguaje especifico):
+Habiendo escrito node lo que he hecho ha sido usar la última versión estable de Node.js. Esto es interesante porque es el lenguaje que uso en el projecto pero en realidad si leemos [esta página](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/) podemos llevarnos la imagen general de que el default install sería npm install, el default script npm test. Y en realidad, yo no quiero hacer eso directamente. Sino hacerlo a través del contenedor y en el contenedor se va a instalar todo lo necesario para hacerlo, por lo tanto no aprovecharía todo lo que esta imagen ofrece (es decir, no tiene mucho sentido usar el lenguaje node con el contenedor Docker). Así que vamos a probar otra opción que es utilizar una imagen más genérica (que no sea de un lenguaje especifico):
 
+```
 language:
     - minimal
 
@@ -31,19 +34,36 @@ install:
 
 script:
     - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
-
+```
 
 Cuando en el lenguaje ponemos [minimal](https://docs.travis-ci.com/user/languages/minimal-and-generic/) estamos teniendo en cuenta que la imagen minimal contiene, entre otras cosas, Docker. Está optimizada para ser más rápida y usar menos espacio. También se podría usar language:generic para tener más lenguajes y servicios disponibles. Pero en realidad, como todo lo que necesitamos lo descargamos en el contenedor (no necesitamos servicios adicionales), con la imagen minimal nos basta y así mejoramos la eficiencia.  
 Vamos a probar a ejecutarla:  
 ![travis6](img/travis6.png)  
-Vemos que es ligeramente más rápida que la opción anterior. Esta tarda 24 segundos y la otra 35 segundos. Entrando en la parte de Job Log en la sección Build system information, vemos que efectivamente cuando el lenguaje era node, se descarga más paquetes. De todos modos, creo que la diferencia de tiempo tampoco es muy grande.   
-Voy a probar de todos modos también la opción generic para tener más datos al comparar:
+Vemos que es ligeramente más rápida que la opción anterior. Esta tarda 24 segundos y la otra 35 segundos.   
+*Entrando en la parte de Job Log en la sección Build system information, vemos que efectivamente cuando el lenguaje era node, se descarga más paquetes. De todos modos, creo que la diferencia de tiempo tampoco es muy grande.*  
 
+- También he querido probar la opción generic para tener más datos con los que comparar. (He tenido un pequeño problema y es que ha aparecido como que Lecturas no estaba activado en travis así que al reactivarlo se han borrado las pruebas de antes). Al ejecutarlo sale que tarda 25 segundos, lo cual me sorprende porque pensaba que la diferencia iba a ser bastante mayor. 
+
+- Otra cosa de las que me he dado cuenta es que no hace falta poner docker pull, pues el mismo comando docker run realiza esa función así que lo borro para que quede un código más compacto y, a la vez, tenga todo lo que necesito. 
+
+- También nombrar el uso de la variable de entorno $TRAVIS_BUILD_DIR que es la dirección absoluta al directorio donde el repositorio ha sido copiado. Así nos aseguramos que no haya fallos de incompatibilidad al direccionar. 
+Al ejecutar de nuevo el fichero definitivo sale que tarda un tiempo de [23 segundos](https://github.com/blancaazz/Lecturas/runs/1384940051). 
+
+    ```
+    language:
+        - generic
+
+    script:
+        - docker run -t -v $TRAVIS_BUILD_DIR:/test blancaazz/lecturas
+    ```
+
+- También mencionar que estamos usando por defecto el sistema operativo linux y la imagen que se descarga de Ubuntu Xenial. Otras opciones hubieran sido dist:bionic (Ubuntu Bionic), dist:trusty (Ubuntu Trusty)
 
 
 ## Configuración Shippable
 
-Para [Shippable](http://docs.shippable.com/) también podremos registrarnos directamente con la cuenta de GitHub.
-![shippable](img/shippable.png)
-Ahora vamos a activar nuestro repositorio dentro de Shippable
-![shippable2](img/shippable2.png)
+Para [Shippable](http://docs.shippable.com/) también podremos registrarnos directamente con la cuenta de GitHub.  
+Ahora vamos a activar nuestro repositorio dentro de Shippable.   
+Una vez activado el repositorio lo siguiente es crear un fichero shippable.yaml  
+La dinámica de Shippable es que ejecuta código dentro de una build machine, en esa build machine contruye un contenedor, que depende del lenguage es uno por defecto. Luego establece el entorno, clona el repositorio y ya ejecuta el código que tú le pongas dentro de ese contenedor. 
+Lo primero que he intentado ha sido probar a "sobreescribir" ese contenedor, es decir, que en vez de ejecutar el por defecto ejecute el mío pero me ha dado bastantes fallos y no sé hasta que punto tiene sentido. Ya que va a intentar clonar el repositorio dentro del contenedor y en realidad el contenedor es autosuficiente, no necesita que se le clone nada, ni se ejecute nada dentro, más allá de lo que tiene ya programado.
