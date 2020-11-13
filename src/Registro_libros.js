@@ -10,7 +10,10 @@ class Registro_libros{
     //Corresponde a la hu1
     registrarLibro(libro){
         if(libro instanceof Libro){
-            this.libros.push(libro);
+            var num = this.libros.indexOf(libro);
+            if(num == -1){
+                this.libros.push(libro);
+            }           
         }
     }
     
