@@ -25,7 +25,12 @@ class Libro{
 
 
     as_string(){
-        return this.nombre + " - " + this.autora + " - " + this.comentario + " - " + this.puntuacion;
+        if(this != "undefined"){
+            return this.nombre + " - " + this.autora + " - " + this.comentario + " - " + this.puntuacion;
+        }
+        else{
+            return "undefined";
+        }
     }
 
 }
