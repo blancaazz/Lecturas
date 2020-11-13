@@ -49,13 +49,13 @@ He añadido también documentación y justificación sobre el uso de DockerHub y
 ## Integración continua
 
 Para la integración continua he usado travis y shippable, he encontrado problemas en este último pero al final están los dos funcionando. También he adelantado un poco el código añadiendo una nueva historia de usuario con su respectiva implementación y tests.  
-Toda la justificación de travis, shippable y resto de avances en este histo están descritos [aquí](docs/integracion_continua.md)
+Toda la justificación de travis, shippable y resto de avances en este hito están descritos [aquí](docs/integracion_continua.md)
 
 ## Historias de usuario
 
 [HU1](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro  
 [HU2](https://github.com/blancaazz/Lecturas/issues/5) que consiste en poder ver la información correspondiente a un libro  
-[HU3](https://github.com/blancaazz/Lecturas/issues/17) que consiste en ver una lista de libros que se haya guardado
+[HU3](https://github.com/blancaazz/Lecturas/issues/17) que consiste en ver una lista de libros que se haya guardado  
 [HU4](https://github.com/blancaazz/Lecturas/issues/20) que consiste en poder borrar un libro del registro 
 
 

@@ -79,8 +79,9 @@ En cambio, en shippable como me daban bastantes fallos de otra manera no lo he h
 ## Aprovechamiento del contenedor Docker
 
 En travis he utilizado directamente el contenedor y no he tenido que hacer ninguna adaptación, tal cual estaba configurado funcionaba bien.  
-A la hora de configurar Shippable si que lo he toqueteado intentando que funcionase, instalando paquetes adicionales pero al no conseguir que funcionara, lo he dejado tal como estaba previamente. 
+A la hora de configurar Shippable sí que lo he toqueteado intentando que funcionase, instalando paquetes adicionales pero al no conseguir que funcionara, lo he dejado tal como estaba previamente. 
 
 ## Avance en el código 
 
-He añadido una nueva historia de usuario, la he implementado en el fichero [Registro test](src/Registro_libros) y realizado tests en el fichero [Registro_test](test/Registro_test). Esta historia consiste en ser capaces de borrar un libro de todo el registro de libros. También he añadido el requisito de que compruebe si el libro está previamente en el registro antes de incluirlo, es decir, que no haya libros repetidos. Esta última mejora corresponde a la historia de usuaria 1
+He añadido una nueva historia de usuario, la he implementado en el fichero [Registro test](../src/Registro_libros) y realizado tests en el fichero [Registro_test](../test/Registro_test). Esta historia consiste en ser capaces de borrar un libro de todo el registro de libros.  
+También he añadido el requisito de que compruebe si el libro está previamente en el registro antes de incluirlo, es decir, que no haya libros repetidos. Esta última mejora corresponde a la historia de usuaria 1
