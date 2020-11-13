@@ -83,5 +83,5 @@ A la hora de configurar Shippable sí que lo he toqueteado intentando que funcio
 
 ## Avance en el código 
 
-He añadido una nueva historia de usuario, la he implementado en el fichero [Registro test](../src/Registro_libros) y realizado tests en el fichero [Registro_test](../test/Registro_test). Esta historia consiste en ser capaces de borrar un libro de todo el registro de libros.  
+He añadido una nueva historia de usuario, la he implementado en el fichero [Registro test](../src/Registro_libros.js) y realizado tests en el fichero [Registro_test](../test/Registro_test.js). Esta historia consiste en ser capaces de borrar un libro de todo el registro de libros.  
 También he añadido el requisito de que compruebe si el libro está previamente en el registro antes de incluirlo, es decir, que no haya libros repetidos. Esta última mejora corresponde a la historia de usuaria 1
