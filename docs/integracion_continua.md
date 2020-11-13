@@ -7,7 +7,7 @@ He seleccionado el repositorio del projecto (Lecturas), que es el que me interes
 ![travis4](img/travis4.png)
 
 Resumiendo, el primer paso es activar el repositorio de Github y el segundo es añadir el fichero .travis.yml al repositorio. Este fichero contiene datos de la configuración. Yo para seguir con la continuidad del projecto, voy a configurar el fichero de manera que haga uso del Dockerfile creado en el hito anterior.
-Al principio escribí el siguiente código en el fichero [.travis.yml](.travis.yml):
+Al principio escribí el siguiente código en el fichero [.travis.yml](../.travis.yml):
 
 ```
 language:  
@@ -67,8 +67,8 @@ Ahora vamos a activar nuestro repositorio dentro de Shippable.
 Una vez activado el repositorio lo siguiente es crear un fichero shippable.yaml  
 La dinámica de Shippable es que ejecuta código dentro de una build machine y en esa build machine contruye un contenedor. Luego se establece el entorno, se clona el repositorio y ya ejecuta el código que tú le pongas dentro de ese contenedor. 
 Lo primero que he intentado ha sido probar a "sobreescribir" ese contenedor, es decir, que en vez de ejecutar el por defecto ejecute el mío pero me ha dado bastantes fallos y no sé hasta que punto tiene sentido. Ya que va a intentar clonar el repositorio dentro del contenedor y en realidad el contenedor es autosuficiente, no necesita que se le clone nada, ni se ejecute nada dentro, más allá de lo que tiene ya programado.  
-Luego he intentado que ejecute el contenedor de Dockerfile una vez dentro del contenedor por defecto, pero me da una serie de fallos que no consigo resolver. Así que he decidido probar a hacer esto sin el contenedor de Dockerfile y directamente poner la instalación y ejecución de test con el gestor npm. Para esto en realidad hacen falta muy pocas líneas de código pues poniendo el lenguaje node_js, se ejecuta por defecto npm install y npm test. El tiempo que tarda en ejecutarse son 27 segundos.  
-Es una solución un poco sosa pues ni siquiera aparecen los test en la parte de test report de Shippable y solo aparecen en el [console](https://app.shippable.com/github/blancaazz/Lecturas/runs/39/1/console). Intentaré perfeccionarla para otro hito pero por ahora por lo menos es funcional y detecta correctamente si se pasan o no los tests.  
+Luego he intentado que ejecute el contenedor de Dockerfile una vez dentro del contenedor por defecto, pero me da una serie de fallos que no consigo resolver. Así que he decidido probar a hacer esto sin el contenedor de Dockerfile y directamente poner la instalación y ejecución de test con el gestor npm. Para esto en realidad hacen falta muy pocas líneas de código pues poniendo el lenguaje node_js, se ejecuta por defecto npm install y npm test. El tiempo que tarda en ejecutarse son 27 segundos.   
+Es una [solución](../shippable.yml) un poco sosa pues ni siquiera aparecen los test en la parte de test report de Shippable y solo aparecen en el [console](https://app.shippable.com/github/blancaazz/Lecturas/runs/39/1/console). Intentaré perfeccionarla para otro hito pero por ahora por lo menos es funcional y detecta correctamente si se pasan o no los tests.  
 He encontrado Shippable como una plataforma un tanto más complicada de usar que Travis. También a nivel de documentación y de ejemplos me ha resultado más difícil, le he echado bastante tiempo y con pocos resultados. Mientras que con travis prácticamente de primeras conseguía hacer funcionar el código.
 
 ## Uso del gestor de tareas
