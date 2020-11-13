@@ -72,4 +72,19 @@ describe("Registro libro", function(){
         });
     });
 
+    //Corresponde a la historia de usuaria 4: borrar un libro dado
+    describe("Borrar un libro (HU4)", function(){
+        it("Debería borrar un libro", function(){
+            registro.borrarLibro(libro_momo);
+            assert.equal(registro.getLibro(nombre_momo), undefined , "Borrado");
+        });
+        it("Debería borrar otro libro", function(){
+            registro.borrarLibro(libro_habitacion);
+            assert.equal(registro.getLibro(nombre_habitacion), undefined, "Borrado");
+        });
+        it("No debería estar el libro", function(){
+            assert.notEqual(registro.getLibro(nombre_momo), libro_momo, "No está el libro");
+        })
+    });
+
 });

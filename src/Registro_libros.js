@@ -36,12 +36,20 @@ class Registro_libros{
     Se hace teniendo en cuenta que no puede haber libro repetido*/
     borrarLibro(libro){
         if(libro instanceof Libro){
-            var num = this.libros.findIndex(libro);
-            libros.splice(num, num);
+            var num = this.libros.indexOf(libro);
+            if(num != -1 && this.libros.length > 0){
+                this.libros.splice(num, 1);
+            }
         }
     }
 
     //funciones a parte:
+
+    //Dado el nombre te devuelve el libro
+    getLibro(nombre_libro){
+        var libro = this.libros.find(libroA => libroA.nombre === nombre_libro)
+        return libro;
+    }
 
     getUltimoLibro(){
         var long = this.libros.length;
@@ -52,13 +60,14 @@ class Registro_libros{
 
     as_string(){
         var resultado = "";
-        var l;/*
-        for (l in this.libros){
-            resultado += this.libros[l].as_string();
-        }*/
-        var long = this.libros.length;
-        for(var i = 0; i < long; i++){
-            resultado += this.libros[i].as_string();
+        if(this != undefined){
+            var long = this.libros.length;
+            for(var i = 0; i < long; i++){
+                resultado += this.libros[i].as_string();
+            }
+        }
+        else{
+            resultado = "undefined";
         }
         return resultado;
     }
