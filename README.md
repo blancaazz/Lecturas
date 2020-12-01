@@ -51,6 +51,11 @@ He añadido también documentación y justificación sobre el uso de DockerHub y
 Para la integración continua he usado travis y shippable, he encontrado problemas en este último pero al final están los dos funcionando. También he adelantado un poco el código añadiendo una nueva historia de usuario con su respectiva implementación y tests.  
 Toda la justificación de travis, shippable y resto de avances en este hito están descritos [aquí](docs/integracion_continua.md)
 
+## Serverless
+
+Para las funciones serverless he usado Vercel y Netlify. Toda la justificación sobre su configuración y uso están en [este documento](docs/serverless.md).   
+He implementado las funciones correspondientes a las historias de usuario 3 (ver la lista de libros guardada) y 2 (ver la información de un libro).  
+
 ## Historias de usuario
 
 [HU1](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro  
