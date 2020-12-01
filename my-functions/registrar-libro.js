@@ -6,6 +6,7 @@ exports.handler = async function(event, context){
     var nombre = event.queryStringParameters["nombre"];
     console.log(nombre);
     return {        
+        statusCode: 200,
         body: "creado correctamente"
     }; 
     
