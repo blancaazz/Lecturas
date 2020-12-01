@@ -49,7 +49,7 @@ He añadido también documentación y justificación sobre el uso de DockerHub y
 ## Integración continua
 
 Para la integración continua he usado travis y shippable, he encontrado problemas en este último pero al final están los dos funcionando. También he adelantado un poco el código añadiendo una nueva historia de usuario con su respectiva implementación y tests.  
-Toda la justificación de travis, shippable y resto de avances en este hito están descritos [aquí](docs/integracion_continua.md)
+Toda la justificación de travis, shippable y resto de avances están descritos [aquí](docs/integracion_continua.md)
 
 ## Serverless
 
