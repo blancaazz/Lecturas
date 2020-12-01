@@ -77,4 +77,4 @@ exports.handler = async function(event, context){
 ```
 Hago lo mismo que con Vercel, creo el registro con un par de libros. Obtengo el nombre pasado en la url y llamo a la función de la clase registro de libros. Lo único que cambia es las formas, ya que en Netlify devolvemos el objeto, mientras que Vercel nos pasaba el objeto para escribir en él. También mencionar que en Netlify hay que poner código de estado porque sino sale este mensaje. "Your function response must have a numerical statusCode. You gave: $ undefined".
 
-Los archivos para el despliegue de esta función están en la carpeta [my-functions](../my-functions)
+Los archivos para el despliegue de esta función están en la carpeta [my-functions](../my-functions). Y para hacer una petición: https://lecturas.netlify.app/.netlify/functions/libro?nombre=Momo
