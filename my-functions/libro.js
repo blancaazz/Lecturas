@@ -9,13 +9,15 @@ exports.handler = async function(event, context){
     var libro = registro.getLibro(nombre);
     var contenido;
     if(libro != undefined){
-        contenido = JSON.stringify(contenido);
+        contenido = JSON.stringify(libro);
+        estado = 404;
     }
     else{
         contenido = JSON.stringify({error: "Fallo al buscar libro"});
+        estado = 200;
     }
-    return {        
-        statusCode: 200,
+    return {       
+        statusCode: estado,
         body: contenido
     }; 
     

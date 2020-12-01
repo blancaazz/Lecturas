@@ -1,5 +1,8 @@
 const Registro_libros = require("../src/Registro_libros.js");
 const Libro = require("../src/Libro.js");
+var fs = require("fs");
+
+
 
 function crearRegistro(){
     const libro_momo = new Libro("Momo", "Michael Ende", "Me ha gustado mucho", 8);
@@ -15,6 +18,9 @@ function crearRegistro(){
 
     registro.registrarLibro(libro_momo);
     registro.registrarLibro(libro_habitacion);
+    console.log(JSON.stringify(registro));
+    
+
     return registro;
 }
 

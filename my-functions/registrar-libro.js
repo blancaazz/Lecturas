@@ -3,8 +3,9 @@ const datos = require("./datos.js")
 
 
 exports.handler = async function(event, context){
-    var nombre = event.queryStringParameters["nombre"];
+    var nombre = event.queryStringParameters.nombre;
     console.log(nombre);
+    registro = datos.crearRegistro();
     return {        
         statusCode: 200,
         body: "creado correctamente"
