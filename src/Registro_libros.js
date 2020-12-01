@@ -74,6 +74,20 @@ class Registro_libros{
         }
         return resultado;
     }
+
+
+    //funciones auxiliares para devolver JSON
+
+    getObjeto(){
+        var registro = new Array();
+        var long = this.libros.length;
+        for (var i = 0; i < long; i ++){
+            registro.push(this.libros[i].getObjeto());
+        }
+        return registro;
+
+    }
+
 }
 
 module.exports = Registro_libros;

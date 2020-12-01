@@ -33,6 +33,28 @@ class Libro{
         }
     }
 
+
+    //funciones auxiliares para devolver JSON
+    
+    getObjeto(){
+        var libro = {
+            "nombre": this.nombre,
+            "autora": this.autora,
+            "comentario": this.comentario,
+            "puntuacion": this.puntuacion
+        };
+        return libro;
+    }
+    getJSON(){
+        var libro = {
+            "nombre": this.nombre,
+            "autora": this.autora,
+            "comentario": this.comentario,
+            "puntuacion": this.puntuacion
+        };
+        var libro_json = JSON.stringify(libro);
+        return libro_json;
+    }
 }
 
 
