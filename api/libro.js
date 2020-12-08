@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     var nombre = req.query.nombre;
     var libro = registro.getLibro(nombre);
     if (libro == undefined){
-        res.send({error: "No se ha introducido correctamente"})
+        res.status(404).send({error: "No se ha introducido correctamente"})
     }
-    res.send(libro);    
+    res.status(200).send(libro);    
 }
