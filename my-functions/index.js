@@ -26,13 +26,14 @@ function createCORSRequest(method, url) {
 
 }
 
-base = "https://lecturas.netlify.app"
+var base = "https://lecturas.netlify.app"
 
 
 $(document).ready(function(){
      
     var url = base + '/.netlify/functions/lista-recomendados';
     var url2 = base + "/.netlify/functions/lista-recomendados?genero=list"
+    console.log("la base es " + base);
 
     var xhttp = createCORSRequest('GET', url);
     if (!xhttp) {
