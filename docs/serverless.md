@@ -86,3 +86,30 @@ Hago lo mismo que con Vercel, creo el registro con un par de libros. Obtengo el 
 
 - Los archivos para el despliegue de esta función están en la carpeta [my-functions](../my-functions)   
 - Y para hacer una petición: https://lecturas.netlify.app/.netlify/functions/libro?nombre=Momo
+
+
+## Despliegue en bot telegram en Vercel
+
+He creado un fichero dentro de API llamado bot-telegram para gestionar desde ahí las peticiones del bot. 
+He creado con el BotFather un bot:
+![bot telegram](./img/bot1.png)
+Para establecer el webhook hay que hacer: 
+```
+https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
+```
+
+Lo cual nos da la siguiente respuesta:
+![respuesta webook](./img/bot2.png)
+
+He creado una variable de tipo secreto que contiene el token del bot de telegram. (TOKEN_TELEGRAM)
+
+Para probar el bot de manera local estoy haciendo uso de ngrok. Simplemente ngrok http 3000, y ya tenemos la url para establecer el webhook mientras hago pruebas. 
+Me he ayudado de la librería Axios para realizar peticiones http. 
+He estado investigando con las apis que había para facilitar la construcción del bot y los framework, pero quería probar a hacerlo sin framework. Y al final, investigando la opción de usar axios es la que he encontrado más asequible, son pocas líneas de código y eficiente. 
+
+
+## Despliegue en Netlify 
+
+Voy a abordar el despliegue de una función correspondiente a una historia de usuario nueva. Consiste en devolver una lista de libros recomendados para leer. Me parece una funcionalidad que se puede integrar de una manera útil en el proyecto.  
+Sigue la temática de libros y lecturas, y lo que hace es ofrecerte un repertorio de libros 
+Además como será una base de datos la cual tampoco variará mucho
