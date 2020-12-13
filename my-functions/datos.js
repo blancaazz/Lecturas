@@ -2,6 +2,7 @@ const Registro_libros = require("../src/Registro_libros.js");
 const Libro = require("../src/Libro.js");
 var fs = require("fs");
 
+mi_registro = crearRegistro();
 
 
 function crearRegistro(){
@@ -25,3 +26,4 @@ function crearRegistro(){
 }
 
 exports.crearRegistro = crearRegistro;
+exports.mi_registro = mi_registro;
