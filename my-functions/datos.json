@@ -1,0 +1,279 @@
+[
+  {
+    "id": 2,
+    "name": "The Handmaid's Tale",
+    "picture": "assets/img/book_pictures/The_handmaid's_tale.jpg",
+    "literary_genres": [
+      "Dystopian Novel"
+    ],
+    "themes": [
+      "Education",
+      "Feminism"
+    ],
+    "abstract": "Beginning with a staged attack that killed the president and most of Congress, a radical political group calling itself the \"Sons of Jacob\", exploiting religious ideology closely resembling some traits of Christian fundamentalism (and especially of Christian Reconstructionism), launches a revolution. The United States Constitution is suspended, newspapers are censored, and what was formerly the United States of America changes drastically into a theonomic military dictatorship known as the Republic of Gilead.[5] The new regime moves quickly to consolidate its power, overtaking all pre-existing religious groups, including traditional Christian denominations; and reorganises society along a new militarised, hierarchical model of Old Testament-inspired social and religious fanaticism among its newly created social classes. Above all, the biggest change is the severe limitation of people's rights, especially those of women, making them unable to hold property, handle money, as well as forbidding them from reading or writing.",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Alias Grace",
+    "picture": "assets/img/book_pictures/Alias_grace.jpg",
+    "literary_genres": [
+      "Mystery Novel",
+      "Horror Novel"
+    ],
+    "themes": [
+      "Education"
+    ],
+    "abstract": "Alias Grace is a novel of historical fiction by Canadian writer Margaret Atwood. First published in 1996 by McClelland & Stewart, it won the Canadian Giller Prize and was shortlisted for the Booker Prize.\n\nThe story fictionalizes the notorious 1843 murders of Thomas Kinnear and his housekeeper Nancy Montgomery in Canada West. Two servants of the Kinnear household, Grace Marks and James McDermott, were convicted of the crime. McDermott was hanged and Marks was sentenced to life imprisonment.\n\nAlthough the novel is based on factual events, Atwood constructs a narrative with a fictional doctor, Simon Jordan, who researches the case. Although ostensibly conducting research into criminal behaviour, he slowly becomes personally involved in the story of Grace Marks and seeks to reconcile his perception of the mild-mannered woman he sees with the murder of which she has been convicted. ",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "The Prince Of Mist",
+    "picture": "assets/img/book_pictures/the_prince_of_mist.jpg",
+    "literary_genres": [
+      "Mystery Novel",
+      "Horror Novel",
+      "Dystopian Novel"
+    ],
+    "themes": [
+      "Friendship",
+      "Love",
+      "Maturity",
+      "Will"
+    ],
+    "abstract": "Max Carver, son of a watchmaker, has moved with his family from the city to get away from the war. Max's new house was formerly owned by Richard Fleischman, his wife and son. Max experiences mysterious events which have to do with Jacob Fleischman, the son of Richard Fleishman, who had drowned. Over time, Max discovers a sculpture garden near his house, where strange things happen. Max finally makes a friend, Roland. Roland is older than Max, around the age of his sister, Alicia, who is 15. After diving near the wreck, the Orpheus, Max has more and more questions, which will be answered by Victor Kray, grandfather of Roland. ",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "The Neverending Story",
+    "picture": "assets/img/book_pictures/The_neverending_story.jpg",
+    "literary_genres": [
+      "Fantasy Novel",
+      "Juvenil Novel"
+    ],
+    "themes": [
+      "Friendship",
+      "Maturity"
+    ],
+    "abstract": "The book centers on a boy, Bastian Balthazar Bux, a overweight and strange child who is neglected by his father after the death of Bastian's mother. While escaping from some bullies, Bastian bursts into the antiquarian book store of Carl Conrad Coreander, where he finds his interest held by a book called The Neverending Story. Unable to resist, he steals the book and hides in his school's attic, where he begins to read.\nThe story Bastian reads is set in the magical land of Fantasia, an unrealistic place of wonder ruled by the benevolent and mysterious Childlike Empress. A great delegation has come to the Empress to seek her help against a formless entity called \"The Nothing\".",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "The Hobbit",
+    "picture": "assets/img/book_pictures/The_hobbit.jpg",
+    "literary_genres": [
+      "Fantasy Novel",
+      "Juvenil Novel"
+    ],
+    "themes": [
+      "Friendship",
+      "Will"
+    ],
+    "abstract": "Bilbo Baggins lives a quiet, peaceful life in his comfortable hole at Bag End. Bilbo lives in a hole because he is a hobbit—one of a race of small, plump people about half the size of humans, with furry toes and a great love of good food and drink. Bilbo is quite content at Bag End, near the bustling hobbit village of Hobbiton, but one day his comfort is shattered by the arrival of the old wizard Gandalf, who persuades Bilbo to set out on an adventure with a group of thirteen militant dwarves. The dwarves are embarking on a great quest to reclaim their treasure from the marauding dragon Smaug, and Bilbo is to act as their “burglar.” The dwarves are very skeptical about Gandalf’s choice for a burglar, and Bilbo is terrified to leave his comfortable life to seek adventure. But Gandalf assures both Bilbo and the dwarves that there is more to the little hobbit than meets the eye.",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "A Room of One's Own",
+    "picture": "assets/img/book_pictures/A_room_of_ones_own.jpg",
+    "literary_genres": [
+      "Essay"
+    ],
+    "themes": [
+      "Feminism",
+      "Education",
+      "Literature"
+    ],
+    "abstract": "Virginia Woolf’s A Room of One's Own is a key work of feminist literary criticism. Written after she delivered two lectures on the topic of ‘women and fiction’ at Cambridge University in 1928, Woolf’s essay examines the educational, social and financial disadvantages women have faced throughout history. It contains Woolf’s famous argument that, ‘A woman must have money and a room of her own if she is to write fiction’ – although Woolf describes this as ‘an opinion upon one minor point’, and the essay explores the ‘unsolved problems’ of women and fiction ‘to show you how I arrived at this opinion about the room and the money’. ",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "To The Lighthouse",
+    "picture": "assets/img/book_pictures/To-The-Ligthouse.jpg",
+    "literary_genres": [
+      "Essay",
+      "Horror Novel"
+    ],
+    "themes": [
+      "Feminism",
+      "Education",
+      "Literature"
+    ],
+    "abstract": "To the Lighthouse is a 1927 novel by Virginia Woolf. The novel centres on the Ramsay family and their visits to the Isle of Skye in Scotland between 1910 and 1920.\n\nFollowing and extending the tradition of modernist novelists like Marcel Proust and James Joyce, the plot of To the Lighthouse is secondary to its philosophical introspection. Cited as a key example of the literary technique of multiple focalization, the novel includes little dialogue and almost no action; most of it is written as thoughts and observations. The novel recalls childhood emotions and highlights adult relationships. Among the book's many tropes and themes are those of loss, subjectivity, the nature of art and the problem of perception.",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "The Fellowship Of The Ring",
+    "picture": "assets/img/book_pictures/Fellowship.jpg",
+    "literary_genres": [
+      "Fantasy Novel",
+      "Juvenil Novel"
+    ],
+    "themes": [
+      "Friendship",
+      "Will"
+    ],
+    "abstract": "The first chapter in the book begins in a light vein, following the tone of The Hobbit. Bilbo Baggins celebrates his 111th (or eleventy-first, as it is called in Hobbiton) birthday on the same day, 22 September, that his younger cousin and adopted heir Frodo Baggins celebrates his coming of age at thirty-three. At the birthday party, Bilbo departs from the Shire, the land of the Hobbits, for what he calls a permanent holiday. Bilbo does so by using the magic ring (that he had found on his journey in The Hobbit) to disappear and is aided by Gandalf the Wizard with a flash and puff of smoke, leading many in the Shire to believe he has gone mad. He leaves Frodo his remaining belongings, including his home, Bag End, and the Ring. It becomes apparent that Bilbo has been strained over the past several years, and he is at first unwilling to give up the Ring, which concerns Gandalf.",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "The Return Of The King",
+    "picture": "assets/img/book_pictures/King.jpg",
+    "literary_genres": [
+      "Mystery Novel",
+      "Horror Novel"
+    ],
+    "themes": [
+      "Maturity",
+      "Will"
+    ],
+    "abstract": "Gandalf and Pippin arrive at Minas Tirith in the kingdom of Gondor, and there Pippin gets to view for the first time the mighty city built on seven levels and with the Tower of Ecthelion high above the Pelennor Fields. They meet Denethor, the Lord and Steward of Gondor, and deliver the news to him of Boromir's death (which Denethor already knows of, because he holds Boromir's cloven horn in his lap), as well as the fact that a devastating attack on his city by Sauron, the Dark Lord of Mordor, is imminent. Stung by the scorn of Denethor, Pippin enters the service of the Steward as repayment of a debt he owes to Boromir, Denethor's dead son and preferred heir. Pippin then meets Beregond, a guard of the Citadel, who tutors him in his duties, and his young son Bergil, who guides him around Minas Tirith. In the middle of the night, Gandalf returns to their room, frustrated that Faramir has not yet returned.",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "The Shadow Of The Wind",
+    "picture": "assets/img/book_pictures/Shadow.jpg",
+    "literary_genres": [
+      "Mystery Novel",
+      "Horror Novel",
+      "Dystopian Novel"
+    ],
+    "themes": [
+      "Education",
+      "Literature",
+      "Love"
+    ],
+    "abstract": "The novel, set in Barcelona in the period following the Spanish Civil War, concerns a young boy, Daniel Sempere. Just after the war, Daniel's father takes him to the secret Cemetery of Forgotten Books, a huge library of old, forgotten titles lovingly preserved by a select few initiates. According to tradition, everyone initiated to this secret place is allowed to take one book from it and must protect it for life. Daniel selects a book called The Shadow of the Wind by Julián Carax. That morning he takes the book home and reads it, completely engrossed. Daniel then attempts to look for other books by this unknown author but can find none. All he comes across are stories of a strange man—calling himself Laín Coubert, after a character in the book who happens to be the Devil—who has been seeking out Carax's books for decades, buying and burning them all. ",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Momo",
+    "picture": "assets/img/book_pictures/Momo.jpg",
+    "literary_genres": [
+      "Fantasy Novel",
+      "Dystopian Novel",
+      "Juvenil Novel"
+    ],
+    "themes": [
+      "Will",
+      "Maturity",
+      "Literature",
+      "Education"
+    ],
+    "abstract": "In the ruins of an amphitheatre just outside an unnamed city lives Momo, a little girl of mysterious origin. She came to the ruin, parentless and wearing a long, used coat. She is illiterate and cannot count, and she doesn't know how old she is. When asked, she replies, \"As far as I remember, I've always been around.\" She is remarkable in the neighbourhood because she has the extraordinary ability to listen—really listen. By simply being with people and listening to them, she can help them find answers to their problems, make up with each other, and think of fun games. The advice given to people \"go and see Momo!\" has become a household phrase and Momo makes many friends, especially an honest, silent street-cleaner, Beppo, and a poetic, extroverted tour guide, Gigi (Guido in some translations). ",
+    "fact_sheet": [
+      "1985",
+      "311",
+      "“McClelland and Stewart”",
+      "0-7710-0813-9",
+      "English"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "The Two Towers",
+    "picture": "assets/img/book_pictures/Towers.jpg",
+    "literary_genres": [
+      "Fantasy Novel",
+      "Juvenil Novel"
+    ],
+    "themes": [
+      "Friendship",
+      "Will"
+    ],
+    "abstract": "As Aragorn searches for Frodo, he suddenly hears Boromir's horn. Aragorn finds Boromir mortally wounded by arrows, sitting with his back against a great tree, surrounded by many slain orcs. Before Boromir dies, Aragorn learns that Saruman's Uruk-hai soldiers have kidnapped some of the hobbits, in spite of his efforts to defend them; that Frodo had vanished after Boromir had attempted to take the Ring from him; and that he truly regretted his actions. In his last moments, Boromir charges Aragorn with defending Minas Tirith from Sauron. With Legolas and Gimli, who had been fighting Orcs by themselves, Aragorn pays his last tributes to Boromir and sends him down the Great River Anduin on a funeral boat, the usual methods of burial being impractical. Aragorn, Legolas, and Gimli later resolve to follow the Uruk-hai captors and rescue Merry and Pippin. ",
+    "fact_sheet": [
+      "1929",
+      "172",
+      "“Hogarth Press",
+      "England",
+      "Harcourt Brace & Co.",
+      "United States”",
+      "9393-29292-111",
+      "English"
+    ]
+  }
+]
