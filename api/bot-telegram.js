@@ -2,11 +2,9 @@ const datos = require("./datos.js")
 const axios = require("axios");
 
 
-function getBaseUrl(){
-    return "https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM;
-}
 
-var TOKEN = "1443881115:AAF2OJ6h-Yoizh998eAsNH9Rr2n6KPPFkiY";
+//variable del token de telegram --> process.env.TOKEN_TELEGRAM;
+
 
 module.exports = (req, res) => {
     var chat_id = req.body["message"]["chat"]["id"]
@@ -15,8 +13,8 @@ module.exports = (req, res) => {
     console.log(texto);
 
     if(texto == "/hola"){
-        axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage",
-        //axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage",
+        //axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage",
+        axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage",
             {
                 chat_id: chat_id,
                 text: "Hola!!"
@@ -32,8 +30,8 @@ module.exports = (req, res) => {
         }
     else if(texto == "/listalibros"){
         registro = datos.crearRegistro();
-        axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage", 
-        //axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage", registro)
+        //axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage", 
+        axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage",
             {
                 chat_id: chat_id,
                 text: JSON.stringify(registro)
@@ -49,8 +47,8 @@ module.exports = (req, res) => {
         }
     else if(texto == "/libro"){
         registro = datos.crearRegistro();
-        axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage", 
-        //axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage", registro)
+        //axios.post("https://api.telegram.org/bot" + TOKEN + "/sendMessage", 
+        axios.post("https://api.telegram.org/bot" + process.env.TOKEN_TELEGRAM + "/sendMessage",
             {
                 chat_id: chat_id,
                 text: "lista de libros",
