@@ -27,13 +27,13 @@ function createCORSRequest(method, url) {
 }
 
 var base = "https://lecturas.netlify.app"
-
+//var base = "";
 
 $(document).ready(function(){
      
-    var url = base + '/.netlify/functions/lista-recomendados';
-    var url2 = base + "/.netlify/functions/lista-recomendados?genero=list"
-    console.log("la base es " + base);
+    var url = '/.netlify/functions/lista-recomendados';
+    var url2 = "/.netlify/functions/lista-recomendados?genero=list"
+    //console.log("la base es " + base);
 
     var xhttp = createCORSRequest('GET', url);
     if (!xhttp) {
@@ -81,7 +81,7 @@ $(document).ready(function(){
         var elemento = $('#inputGenero').find(":selected").text()
         console.log("Button clicked");
         console.log(elemento);
-        var url = base + "/.netlify/functions/lista-recomendados/?genero=" + elemento;
+        var url = "/.netlify/functions/lista-recomendados/?genero=" + elemento;
 
         var xhttp = createCORSRequest('GET', url);
         if (!xhttp) {
