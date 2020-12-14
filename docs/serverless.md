@@ -2,25 +2,36 @@
 
 ## Despliegue con Vercel
 
-Ya tengo conectado Vercel a mi cuenta de github. Para las desplegar funciones serverless sin configuración adicional se crea la carpeta api.  
-Cada petición da acceso a un objeto request y response. Este último será nuestra respuesta, así que tendremos que asignarle el contenido y estado que queramos.  
-Primero voy a probar a implementar la historia de usuario 3, donde hay que resolver que se devuelvan todos los libros que tengamos en el registro. Antes de eso, tengo que decidir de dónde voy a tomar esos datos.    
-Para no complicarme mucho y dado que no hace falta que conectemos una base de datos, para un primer acercamiento he creado un fichero que se llama datos.js donde creo un registro con un par de libros. Si luego quisiera añadirle una base de datos he encontrado información en este [enlace](https://vercel.com/docs/solutions/databases).    
-- He creado ya una primera función muy básica que te devuelve toda la información:
+Primero se conecta la cuenta de github a la de Vercel, para eso podemos iniciar sesión en Vercel con la cuenta de Github y luego autorizar el repositorio de Lecturas.
+
+![vercel](img/vercel5.png)
+
+Ahora cada push en github también se actualiza en Vercel.  
+Una vez conectado para las desplegar funciones serverless se crea la carpeta api y ahí se programan las funciones, no hace falta otro tipo de configuración adicional.
+
+
+## Integración dentro del projecto con Vercel
+
+He implementado dos funciones, una corresponde a la historia de usuaria 3 (devuelve todos los libros que hemos registrado) y la otra a la historia de usuaria 2 (devuelve información sobre el libro que introduzcas).
+
+- Para la primera función el código es muy sencillo: 
 
 ```
 module.exports = (req, res) => {
     registro = datos.crearRegistro();
-    res.send(registro.as_string())
+    console.log(registro.mostrarInformacion())
+    res.send(registro)
 }
-```   
-- Para ver el resultado de la petición: https://lecturas-h8qv2p50o.vercel.app/api/lista-libros
 
-Sin embargo, la respuesta me la devuelve como una cadena de texto y el hito nos pide que la devuelva en JSON así que mi primera idea fue crear un par de funciones auxiliares en la clase Libro y en la clase Registro para devolver un JSON. Pero a base de prueba y error y estar investigándolo, resulta que cuando hacemos res.send(body), body puede ser un string, un objeto o un Buffer. Cuando hacemos que sea un objeto, al acceder a la página se devuelve como JSON. Otra opción sería hacer res.json(obj). Así que no hace falta que llame a las funciones auxiliares, sino que devolviendo directamente el objeto en la función, aparece como JSON, tal que: res.send(registro);   
-De esta manera estaría creada ya la primera función correspondiente a la historia de usuaria 3, la cual es bastante sencilla. Así que voy a proceder a realizar otra que incluya el uso de parámentros.    
-Por ejemplo, en mi historia de usuaria quiero resolver el mostrar por pantalla la información correspondiente a un libro. Para ello, debería pasar como parámetro el nombre del libro. 
+```    
 
-- El código de la función es el siguiente:
+Cada petición da acceso a un objeto request y response. Este último será nuestra respuesta, así que tendremos que asignarle el contenido y estado que queramos.  
+Cuando hacemos res.send(body), body puede ser un string, un objeto o un Buffer. Cuando hacemos que sea un objeto, al acceder a la página se devuelve como JSON. Otra opción sería hacer res.json(obj).   
+Lo que hago es crear un registro y mandarlo directamente. 
+
+- Para ver el resultado de la petición: https://lecturas.vercel.app/api/lista-libros
+
+- Para la segunda función: 
 
 ```
 module.exports = (req, res) => {
@@ -28,88 +39,106 @@ module.exports = (req, res) => {
     var nombre = req.query.nombre;
     var libro = registro.getLibro(nombre);
     if (libro == undefined){
-        res.send({error: "No se ha introducido correctamente"})
+        res.status(404).send({error: "No se ha introducido correctamente"})
     }
-    res.send(libro);    
-}
-
-
-```
-
-Primero creamos el registro como antes y luego capturamos el nombre del libro de la url (req.query.nombre) para llamar a la función del registro de libros que nos devuelve el nombre correspondiente (registro.getLibro(nombre)).    
-Si el libro que se llama no existe o no se usa correctamente el parámetro nombre, lo he implementado de manera que devuelva un JSON con un campo de error.    
-- Para ver el resultado de la petición: https://lecturas-h8qv2p50o.vercel.app/api/libro?nombre=Momo     
-
-- Los archivos para el despliegue de estas funciones están en la [carpeta api](../api)
-
-## Despliegue con Netlify
-
-Ya me he registrado en Netlify y autorizado el repositorio correspondiente al proyecto. Otra de las cosas que he hecho es instalar Netlify CLI con el comando npm install netlify-cli -g (para que sea global) porque, entre otras cosas, quiero usar Netlify dev para probar primero localmente las funciones.    
-Para configurar Netlify podemos hacerlo desde la página web o en el archivo netlify.toml. Voy a configurarlo de la segunda manera. Lo primero que quiero hacer es configurar el directorio desde el cuál ejecutar las funciones serverless, para eso ponermos esta línea:
-
-```
-[build]
-    functions = "./my-functions"
-
-```
-
-En realidad, no necesito ninguna configuración adicional para que funcione el código que quiero probar en este hito.
-Lo que voy a hacer es implementar también la función de buscar libro para probar el uso de parámetros en Netlify. Estuve un buen rato pensando en cómo hacer las otras dos historias de usuario pero como son de insertar y borrar datos me parece que no tiene mucho sentido hacerlas como prototipado pues estaría más tiempo mirando las maneras de guardar y borrar datos, cuando es algo que más adelante abarcaré probablemente desde el uso de una base de datos.   
-
-- El código de la función de buscar datos es en siguiente
-
-```
-
-exports.handler = async function(event, context){
-    var nombre = event.queryStringParameters.nombre;
-    registro = datos.crearRegistro();
-    var libro = registro.getLibro(nombre);
-    var contenido;
-    var estado;
-    if(libro != undefined){
-        contenido = JSON.stringify(libro);
-        estado = 404;
-    }
-    else{
-        contenido = JSON.stringify({error: "Fallo al buscar libro"});
-        estado = 200;
-    }
-    return {       
-        statusCode: estado, 
-        body: contenido
-    }; 
-    
+    res.status(200).send(libro);    
 }
 
 ```
-Hago lo mismo que con Vercel, creo el registro con un par de libros. Obtengo el nombre pasado en la url y llamo a la función de la clase registro de libros. Lo único que cambia es las formas, ya que en Netlify devolvemos el objeto, mientras que Vercel nos pasaba el objeto para escribir en él. También mencionar que en Netlify hay que poner código de estado porque sino sale este mensaje. "Your function response must have a numerical statusCode. You gave: $ undefined".
 
-- Los archivos para el despliegue de esta función están en la carpeta [my-functions](../my-functions)   
-- Y para hacer una petición: https://lecturas.netlify.app/.netlify/functions/libro?nombre=Momo
+Primero creamos el registro como antes y luego capturamos el nombre del libro de la url (req.query.nombre) para llamar a la función del registro de libros que nos devuelve el información sobre el libro correspondiente (registro.getLibro(nombre)).    
+Si el libro que se llama no existe o no se usa correctamente el parámetro nombre, lo he implementado de manera que devuelva un JSON con un campo de error y el estado 404.
+
+- Para ver el resultado de la petición: https://lecturas.vercel.app/api/libro?nombre=Momo 
+
+   
+Para los datos he creado un fichero que se llama datos.js donde hay una función en la cual se crea un registro con un par de libros.  
+
+- Los archivos para el despliegue de estas funciones están en la [carpeta api](../api)   
+
+Me parece que estas funcionalidades son interesantes para luego, en vez de crear los datos de esta manera (que es más bien para probar), se conectase con la base de datos que almacena los libros registrados. De esta manera, se podrían obtener, insertar, modificar datos con las ventajas que proporciona la computación serverless. Y también, por ejemplo, conectar todo esto con un bot de telegram.
 
 
-## Despliegue en bot telegram en Vercel
+## Despliegue de un bot telegram en Vercel
 
-He creado un fichero dentro de API llamado bot-telegram para gestionar desde ahí las peticiones del bot. 
-He creado con el BotFather un bot:
-![bot telegram](./img/bot1.png)
-Para establecer el webhook hay que hacer: 
+- He creado un fichero dentro de API llamado bot-telegram para gestionar desde ahí las peticiones del bot. 
+- He creado con el BotFather un bot:
+
+![bot telegram](./img/bot1.png)   
+
+Para establecer el webhook hay que hacer:
+
 ```
 https://api.telegram.org/bot{my_bot_token}/setWebhook?url={url_to_send_updates_to}
+
 ```
 
-Lo cual nos da la siguiente respuesta:
+Lo cual nos da la siguiente respuesta:   
 ![respuesta webook](./img/bot2.png)
 
 He creado una variable de tipo secreto que contiene el token del bot de telegram. (TOKEN_TELEGRAM)
 
 Para probar el bot de manera local estoy haciendo uso de ngrok. Simplemente ngrok http 3000, y ya tenemos la url para establecer el webhook mientras hago pruebas. 
 Me he ayudado de la librería Axios para realizar peticiones http. 
-He estado investigando con las apis que había para facilitar la construcción del bot y los framework, pero quería probar a hacerlo sin framework. Y al final, investigando la opción de usar axios es la que he encontrado más asequible, son pocas líneas de código y eficiente. 
+He estado investigando con las apis que había para facilitar la construcción del bot y los framework, pero quería probar a hacerlo sin framework. Y al final, investigando la opción de usar axios es la que he encontrado más asequible, son pocas líneas de código y eficiente.    
+
+El código está en el fichero [bot-telegram](../api/bot-telegram.js).   
+He hecho funciones para el comando /hola (de prueba, devuelve Hola!!), /listalibros (devuelve todos los libros registrados), /listanombres (devuelve una lista con el nombre de todos los libros), /libro "nombre_libro" (devuelve información sobre un libro)
+
+## Despliegue con Netlify
+
+Ya me he registrado en Netlify y autorizado el repositorio correspondiente al proyecto. 
+
+![netlify](img/netlify.png)
+
+Está conectado con github, de manera que cada push a la cuenta de github actualiza automáticamente la de Netlify.
+
+Otra de las cosas que he hecho es instalar Netlify CLI con el comando npm install netlify-cli -g (para que sea global) porque, entre otras cosas, quiero usar Netlify dev para probar primero localmente las funciones.   
+
+Para configurar Netlify podemos hacerlo desde la página web o en el archivo netlify.toml. Voy a configurarlo de la segunda manera:
+
+```
+[build]
+    functions = "./my-functions"
+    publish = "my-functions/"
+
+```
+
+De esta manera busca las funciones programadas en la carpeta my-functions y también la página html que he creado. 
 
 
-## Despliegue en Netlify 
 
-Voy a abordar el despliegue de una función correspondiente a una historia de usuario nueva. Consiste en devolver una lista de libros recomendados para leer. Me parece una funcionalidad que se puede integrar de una manera útil en el proyecto.  
-Sigue la temática de libros y lecturas, y lo que hace es ofrecerte un repertorio de libros 
-Además como será una base de datos la cual tampoco variará mucho
+## Integración dentro del proyecto con Netlify
+
+He creado dos historias de usuario.  
+- HU7 -> Obtener una lista de libros recomendados. 
+- HU8 -> Filtrar los libros recomendados por género.
+
+Estas dos historias de usuario vienen motivadas por la idea de ofrecer la funcionalidad adicional de mostrar una lista de libros en la cual inspirarse a la hora de elegir una nueva lectura.   
+He implementado una función serverless dentro del fichero [lista-recomendaciones](../my-functions/lista-recomendados.js). Esta función acepta diferentes parámetros.
+- Si no hay ningún parámetro te devuelve una lista con los nombres de todos los libros.   
+Ej: https://lecturas.netlify.app/.netlify/functions/lista-recomendados
+- Si está el parámetro nombre y coincide con el nombre de un libro, te devuelve información sobre ese libro.  
+Ej: https://lecturas.netlify.app/.netlify/functions/lista-recomendados?nombre=Momo
+- Si está el parámetro género y coincide con uno de los posibles géneros literarios, te devuelve una lista de nombres de libros de ese género.  
+Ej: https://lecturas.netlify.app/.netlify/functions/lista-recomendados?genero=Essay
+
+Para separar la lógica de negocio todas las funciones que interactúan con los datos están en un fichero a parte: [funciones_datos](../my-functions/funciones_datos.js).  
+
+Los datos están en un fichero json en la misma carpeta.    
+
+
+## Integración con un front end con Netlify
+
+He creado una página web para mostrar los datos que se obtienen a través de la función serverless desplegada en Netlify. Para ello, he creado un fichero [index.html](../my-functions/index.html) y otro [index.js](../my-functions/index.js) que gestiona el documento html de forma dinámica.  
+Es una página muy sencilla que hace llamadas a la función serverless y obtiene la lista de géneros para introducirlas en una lista donde se puede elegir una opción para filtrar los libros.   
+Para ir a la página: https://lecturas.netlify.app/  
+
+![frontend](img/frontend.png)
+
+Como herramientas para realizarlo he usado bootstrap y jquery.
+
+
+
+
+
