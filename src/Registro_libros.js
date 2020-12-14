@@ -34,6 +34,18 @@ class Registro_libros{
         return this.libros
     }
 
+
+    //Corresponde HU6
+    /*Devolver una lista con los nombres de todos los libros*/
+    listaLibrosNombres(){
+        var nombres = [];
+        var long = this.libros.length;
+        for(var i = 0; i < long; i++){
+            nombres.push(this.libros[i].getNombre());
+        }
+        return nombres;
+    }
+
     //Corresponde a la hu4
     /*Borra el libro que se le pasa
     Se hace teniendo en cuenta que no puede haber libro repetido*/
