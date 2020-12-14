@@ -1,5 +1,4 @@
 const Registro_libros = require("../src/Registro_libros.js");
-//import { crearRegistro } from "datos.js"
 const datos = require("./datos.js")
 
 module.exports = (req, res) => {
