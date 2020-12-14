@@ -26,6 +26,19 @@ function createCORSRequest(method, url) {
 
 }
 
+//pone la lista de libros en el index.html
+function listaLibros(text){
+    var lista = text.split(",");
+            
+    var contenido = '<ul id=Lista class="list-group">';
+    for (l in lista){
+        contenido += '<li class="list-group-item">' + lista[l] + "</li>"
+    }
+    contenido += "</ul>"
+    $("#Lista").replaceWith(contenido);
+}
+
+
 var base = "https://lecturas.netlify.app"
 //var base = "";
 
@@ -44,9 +57,7 @@ $(document).ready(function(){
       
         var text = xhttp.responseText;
       
-  
-        var myJSON = text;
-        $("#Lista").text(myJSON);
+        listaLibros(text);
 
     };
 
@@ -91,8 +102,8 @@ $(document).ready(function(){
         xhttp.onload = function() {
           
             var text = xhttp.responseText;
-
-            $("#Lista").text(text);
+            
+            listaLibros(text);
     
         };
         xhttp.send();

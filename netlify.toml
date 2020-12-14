@@ -1,3 +1,2 @@
 [build]
     functions = "./my-functions"
-    publish = "my-functions/"
