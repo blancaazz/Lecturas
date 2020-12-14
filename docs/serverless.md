@@ -85,6 +85,12 @@ He estado investigando con las apis que había para facilitar la construcción d
 El código está en el fichero [bot-telegram](../api/bot-telegram.js).   
 He hecho funciones para el comando /hola (de prueba, devuelve Hola!!), /listalibros (devuelve todos los libros registrados), /listanombres (devuelve una lista con el nombre de todos los libros), /libro "nombre_libro" (devuelve información sobre un libro)
 
+![bot](img/bot3.png)
+![bot](img/bot4.png)
+![bot](img/bot5.png)
+![bot](img/bot6.png)
+
+
 ## Despliegue con Netlify
 
 Ya me he registrado en Netlify y autorizado el repositorio correspondiente al proyecto. 
