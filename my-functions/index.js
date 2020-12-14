@@ -55,6 +55,7 @@ $(document).ready(function(){
   
     xhttp.onload = function() {
       
+        //Añade la lista con todos los libros
         var text = xhttp.responseText;
       
         listaLibros(text);
@@ -75,6 +76,7 @@ $(document).ready(function(){
         for(i in lista){        
             option += "<option>" + lista[i] + "</option>";
         }
+        //añadimos las opciones de géneros
         $("#inputGenero").append(option);
 
     };
@@ -84,9 +86,7 @@ $(document).ready(function(){
     xhttp2.send();
 
 
-
-
-
+    //cuando pulsa el botón para filtrar los libros por género
     $("#gbtn").click(function(){
 
         var elemento = $('#inputGenero').find(":selected").text()
