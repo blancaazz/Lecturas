@@ -54,7 +54,8 @@ Toda la justificación de travis, shippable y resto de avances están descritos 
 ## Serverless
 
 Para las funciones serverless he usado Vercel y Netlify. Toda la justificación sobre su configuración y uso están en [este documento](docs/serverless.md).   
-He implementado las funciones correspondientes a las historias de usuario 3 (ver la lista de libros guardada) y 2 (ver la información de un libro).  
+He implementado las funciones correspondientes a las historias de usuario 3 (ver la lista de libros guardada) y 2 (ver la información de un libro) con Vercel junto con un bot de Telegram.    
+Y he creado dos historias de usuario para cubrir una funcionalidad adicional (ver una lista de libros recomendados y filtrarlos por género literario). Para esto he desplegado una función en netlify y lo he integrado con un front-end.  
 
 ## Historias de usuario
 
