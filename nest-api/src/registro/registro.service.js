@@ -13,5 +13,14 @@ export class RegistroService {
         return this.libros
     }    
 
+    //Corresponde a la hu1
+    registrarLibro(libro){
+        if(libro instanceof Libro){
+            var num = this.libros.indexOf(libro);
+                if(num == -1){
+                this.libros.push(libro);
+            }           
+        }
+    }
 
 }

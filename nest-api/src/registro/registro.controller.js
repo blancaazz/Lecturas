@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Bind, Param, Dependencies } from '@nestjs/common';
 import { RegistroService } from './registro.service.js';
-
+var Libro = require ("./Libro.js");
 
 @Controller('registro')
 @Dependencies(RegistroService)
@@ -22,9 +22,12 @@ export class RegistroController {
         console.log(params.id)
     }
 
-    @Post("libro")
-    registrarLibro(){
-        return "Esto crea un libro"
+    @Post("libro/:nombre/:autora/:comentario/:puntuacion")
+    @Bind(Param())
+    registrarLibro(params){
+        var libro = new Libro(params.nombre, params.autora, params.comentario, params.puntuacion);
+        this.registroService.registrarLibro(libro);
+        return libro
     }
 
 
