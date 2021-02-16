@@ -33,7 +33,7 @@ export class RegistroController {
     @Get("libro/:id")
     @Bind(Param())
     devolverLibro(params){
-        console.log(params.id)
+        return this.registroService.getLibro(params.id)
     }
 
 

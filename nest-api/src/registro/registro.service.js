@@ -23,4 +23,11 @@ export class RegistroService {
         }
     }
 
+    //Corresponde a la hu2
+    //Dado el id te devuelve el libro
+    getLibro(id){
+        var libro = this.libros.find(libroA => libroA.id === id)
+        return libro;
+    }
+
 }
