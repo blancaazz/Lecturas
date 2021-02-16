@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Bind, Param, Dependencies } from '@nestjs/common';
+import { Controller, Get, Post, Bind, Param, Dependencies, Delete } from '@nestjs/common';
 import { RegistroService } from './registro.service.js';
 var Libro = require ("./Libro.js");
 
@@ -10,6 +10,7 @@ export class RegistroController {
     }
 
     //esta ruta corresponde a /registro/libros
+    //devuelve la lista entera de libros
     @Get("libros")
     devolverTodo(){
         return this.registroService.listaLibros();
@@ -17,6 +18,7 @@ export class RegistroController {
 
 
     //esta ruta se corresponde con /registro/libro/Momo/Michael Ende/Genial/8
+    //incluye un libro en el registro
     @Post("libro/:nombre/:autora/:comentario/:puntuacion")
     @Bind(Param())
     registrarLibro(params){
@@ -30,13 +32,18 @@ export class RegistroController {
     }
 
     //esta ruta corresponde a /registro/libro
+    //devuelve el libro correspondiente a esa id
     @Get("libro/:id")
     @Bind(Param())
     devolverLibro(params){
         return this.registroService.getLibro(params.id)
     }
 
-
+    @Delete("libro/:id")
+    @Bind(Param())
+    borrarLibro(params){
+        this.registroService.borrarLibro(params.id)
+    }
 
 
 }
