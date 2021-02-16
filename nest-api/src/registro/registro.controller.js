@@ -15,6 +15,20 @@ export class RegistroController {
         return this.registroService.listaLibros();
     }
 
+
+    //esta ruta se corresponde con /registro/libro/Momo/Michael Ende/Genial/8
+    @Post("libro/:nombre/:autora/:comentario/:puntuacion")
+    @Bind(Param())
+    registrarLibro(params){
+        //para crear un id único vamos a usar el nombre y la autora:
+        var id = params.nombre + "-" + params.autora;
+        id = id.replace(/ /g, "");
+        var libro = new Libro(id, params.nombre, params.autora, params.comentario, params.puntuacion);
+
+        this.registroService.registrarLibro(libro);
+        return libro
+    }
+
     //esta ruta corresponde a /registro/libro
     @Get("libro/:id")
     @Bind(Param())
@@ -22,13 +36,7 @@ export class RegistroController {
         console.log(params.id)
     }
 
-    @Post("libro/:nombre/:autora/:comentario/:puntuacion")
-    @Bind(Param())
-    registrarLibro(params){
-        var libro = new Libro(params.nombre, params.autora, params.comentario, params.puntuacion);
-        this.registroService.registrarLibro(libro);
-        return libro
-    }
+
 
 
 }
