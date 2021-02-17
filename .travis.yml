@@ -1,6 +1,8 @@
 #utilizamos el lenguaje minimal
-language:
-    - node_js
+language: node_js
+
+node_js:
+    - 14
 
 #$TRAVIS_BUILD_DIR es la variable de entorno que da la dirección absoluta al directorio
 #donde el repositorio ha sido copiado
