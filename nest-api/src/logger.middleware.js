@@ -18,7 +18,7 @@ export function logger(req, res, next){
   var dia = dat_tiempo.getDate();
   var horas = dat_tiempo.getHours();
   var minutos = dat_tiempo.getMinutes();
-  
+
   console.log("Peticion realizada a las " + dia + "-" + mes + "-" + año + " " + horas + ":" + minutos);
   console.log("Url: " + url + " - Método: " + metodo + " -  Código de estado: " + codigo + "")
   next();
