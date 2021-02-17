@@ -64,7 +64,6 @@ Siendo la función listaLibros()
     }    
 ```
 
-poner ejemplossss
 
 - /registro/libro/:nombre/:autora/:comentario/:puntuacion
 
@@ -94,7 +93,6 @@ siendo la función registrarLibro
     }
 ```
 
-ejemplo
 
 - /registro/libro/:id
 
@@ -114,7 +112,7 @@ siendo la función getLibro
     }
 
 ```
-ejemplo
+
 
 - /registro/libro/:id
 

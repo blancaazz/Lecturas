@@ -57,13 +57,21 @@ Para las funciones serverless he usado Vercel y Netlify. Toda la justificación 
 He implementado las funciones correspondientes a las historias de usuario 3 (ver la lista de libros guardada) y 2 (ver la información de un libro) con Vercel junto con un bot de Telegram.    
 Y he creado dos historias de usuario para cubrir una funcionalidad adicional (ver una lista de libros recomendados y filtrarlos por género literario). Para esto he desplegado una función en netlify y lo he integrado con un front-end.  
 
+## Microservicio
+
+La justifición del framework elegido y el diseño básico de las rutas de la API se encuentran en este [documento](docs/justificacion_ms). De manera resumida, decir que he hecho la api con nest.js, y luego, para hacer una comparativa y porque creo que se ajusta más a lo que quiero, la he hecho también con express.    
+De modo que la documentación asociada a nest.js se encuentra en el documento [nest_ms](docs/nest_ms) y la asociada a express está en el documento [express_ms](docs/express_ms)
+
 ## Historias de usuario
 
 [HU1](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro  
 [HU2](https://github.com/blancaazz/Lecturas/issues/5) que consiste en poder ver la información correspondiente a un libro  
 [HU3](https://github.com/blancaazz/Lecturas/issues/17) que consiste en ver una lista de libros que se haya guardado  
 [HU4](https://github.com/blancaazz/Lecturas/issues/20) que consiste en poder borrar un libro del registro 
-
+[HU5](https://github.com/blancaazz/Lecturas/issues/23) que consiste en obtener una lista de libros ordenados según la puntuación
+[HU6](https://github.com/blancaazz/Lecturas/issues/24) que consiste en obtener una lista de libros con únicamente el nombre
+[HU7](https://github.com/blancaazz/Lecturas/issues/25) que consiste en obtener una lista de libros recomnedados   
+[HU8](https://github.com/blancaazz/Lecturas/issues/26) que consiste en filtrar los libros recomendados por género
 
 
 ## Enlaces de interes
