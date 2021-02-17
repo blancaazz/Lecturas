@@ -17,6 +17,14 @@ app.get("/registro/libros", function(req, res){
     res.status(200).send(libros)
 })
 
+app.post("/registro/libro/:nombre/:autora/:comentario/:puntuacion", function(req, res){
+    var id = req.params.nombre + "-" + req.params.autora;
+    id = id.replace(/ /g, "");
+    var libro = new Libro(req.params.id, req.params.nombre, req.params.autora, req.params.comentario, req.params.puntuacion);
+    registro.registrarLibro(libro);
+    res.status(200).send(libro)
+})
+
 //app.route("/registro/libro")
 
 module.exports = app;

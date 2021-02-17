@@ -1,6 +1,7 @@
 class Libro{
 
-    constructor(nombre, autora, comentario, puntuacion){
+    constructor(id, nombre, autora, comentario, puntuacion){
+        this.id = id;
         this.nombre = nombre;
         this.autora = autora;
         this.comentario = comentario;
