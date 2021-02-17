@@ -51,6 +51,11 @@ class Registro_libros{
         return this.dator.getLibro(nombre_libro)
     }
 
+    //Dado el id te devuelve el libro
+    obtenerLibro(id){
+        return this.dator.obtenerLibro(id);
+    }
+
     getUltimoLibro(){
         return this.dator.getUltimoLibro();
     }

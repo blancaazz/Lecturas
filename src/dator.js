@@ -67,6 +67,12 @@ class Dator{
         return libro;
     }
 
+    //Dado el id te devuelve el libro
+    obtenerLibro(id){
+        var libro = this.libros.find(libroA => libroA.id === id)
+        return libro;        
+    }
+
     getUltimoLibro(){
         var long = this.libros.length;
         if(long > 0){
