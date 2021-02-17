@@ -7,6 +7,27 @@ const Dator = require("./dator.js")
 const dator = new Dator();
 const registro = new RegistroLibro(dator);
 
+var logger = function(req, res, next){
+    var metodo = req.method;
+    var codigo = res.statusCode;
+    var url = req.originalUrl;
+    var dat_tiempo = new Date();
+    let mes = dat_tiempo.getMonth() + 1;
+    var año = dat_tiempo.getFullYear();
+    var dia = dat_tiempo.getDate();
+    var horas = dat_tiempo.getHours();
+    var minutos = dat_tiempo.getMinutes();
+  
+    console.log("Peticion realizada a las " + dia + "-" + mes + "-" + año + " " + horas + ":" + minutos);
+    console.log("Url: " + url + " - Método: " + metodo + " -  Código de estado: " + codigo + "")
+    next();    
+}
+
+//para cargar la función de middleware
+app.use(logger)
+
+
+//rutas
 
 app.get("/", function(req, res){
     res.status(200).send("Conexión establecida")
