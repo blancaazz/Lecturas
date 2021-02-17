@@ -34,6 +34,19 @@ class Dator{
         }
     }
 
+    //Corresponde a la hu4
+    /*Borra el libro que se le pasa según la id
+    Se hace teniendo en cuenta que no puede haber libro repetido*/
+    borrarLibroId(id){
+        var libro = this.obtenerLibro(id)
+        if(libro instanceof Libro){
+            var num = this.libros.indexOf(libro);
+            if(num != -1 && this.libros.length > 0){
+                this.libros.splice(num, 1);
+            }
+        }
+    }
+
     //Corresponde a la hu2
     /*Dado el nombre de un libro devolvemos la información sobre ese libro*/
     mostrarInformacion(nombre_libro){    

@@ -43,6 +43,9 @@ class Registro_libros{
     borrarLibro(libro){
         this.dator.borrarLibro(libro)
     }
+    borrarLibroId(id){
+        this.dator.borrarLibroId(id);
+    }
 
     //funciones a parte:
 

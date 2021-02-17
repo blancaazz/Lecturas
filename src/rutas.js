@@ -36,7 +36,8 @@ app.route("/registro/libro/:id")
         }
     })
     .delete(function(req, res){
-        res.send("oke")
+        registro.borrarLibroId(req.params.id)
+        res.status(200).send({"mensaje": "ok, borrado"})
     });
 
 module.exports = app;
