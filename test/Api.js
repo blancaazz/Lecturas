@@ -1,11 +1,11 @@
-const request = require("supertest");
+const supertest = require("supertest");
 const app = require("../src/rutas.js")
 
 
 describe("Llamadas al registro", function(){
 
     it("Deberia registrar un libro (Momo)", function(done){
-        request(app)
+        supertest(app)
             .post("/registro/libro/Momo/Michael Ende/Ha estado genial/8")
             .expect("Content-Type", /json/)
             .expect(200, {
@@ -18,7 +18,7 @@ describe("Llamadas al registro", function(){
     })
 
     it("Deberia registrar un libro (La historia interminable)", function(done){
-        request(app)
+        supertest(app)
             .post("/registro/libro/La historia interminable/Michael Ende/Me ha gustado/7")
             .expect("Content-Type", /json/)
             .expect(200, {
@@ -34,7 +34,7 @@ describe("Llamadas al registro", function(){
     //Correspondientes a la ruta /registro/libros
     //en este caso como solo está registrado Momo, voy a poner que tendría que devolver ese
     it("Debería devolver los libros", function(done){
-        request(app)
+        supertest(app)
             .get("/registro/libros")
             .expect("Content-Type", /json/)
             .expect(200, [{
@@ -53,14 +53,14 @@ describe("Llamadas al registro", function(){
     });
 
     it("No debería devolver los libros (es una ruta inexistente)", function(done){
-        request(app)
+        supertest(app)
             .get("/registro/libross")
             .expect(404, done);
     });
 
     //Correspondientes a la ruta /registro/libro/:id
     it("Deberia devolver información de un libro en función de su id", function(done){
-        request(app)
+        supertest(app)
             .get("/registro/libro/Momo-MichaelEnde")
             .expect("Content-Type", /json/)
             .expect(200, {
@@ -74,7 +74,7 @@ describe("Llamadas al registro", function(){
 
     //Correspondientes a la ruta /registro/libro/:id
     it("Deberia borrar el libro de Momo", function(done){
-        request(app)
+        supertest(app)
             .delete("/registro/libro/Momo-MichaelEnde")
             .expect(200, done);
     })
@@ -82,7 +82,7 @@ describe("Llamadas al registro", function(){
     //ahora para comprobar que se ha borrado voy a hacer una nueva llamada
     //a la función que devolvía todos los libros:
     it("Debería devolver los libros", function(done){
-        request(app)
+        supertest(app)
             .get("/registro/libros")
             .expect("Content-Type", /json/)
             .expect(200, [{
