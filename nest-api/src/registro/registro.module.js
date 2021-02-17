@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, Dependencies } from '@nestjs/common';
 import { RegistroController } from './registro.controller'
 import { RegistroService } from './registro.service'
 
@@ -7,6 +7,7 @@ import { RegistroService } from './registro.service'
     providers: [RegistroService],
 })
 
+@Dependencies(RegistroService)
 export class RegistroModule {
     constructor(registroService){
         this.registroService = registroService;

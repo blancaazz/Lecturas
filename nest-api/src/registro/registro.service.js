@@ -24,6 +24,13 @@ export class RegistroService {
     }
 
 
+    //Corresponde a la hu2
+    //Dado el id te devuelve el libro
+    getLibro(id){
+        var libro = this.libros.find(libroA => libroA.id === id)
+        return libro;
+    }
+
     //Corresponde a la hu4
     /*Borra el libro que se le pasa
     Se hace teniendo en cuenta que no puede haber libro repetido*/
@@ -36,12 +43,4 @@ export class RegistroService {
             }
         }
     }
-
-    //Corresponde a la hu2
-    //Dado el id te devuelve el libro
-    getLibro(id){
-        var libro = this.libros.find(libroA => libroA.id === id)
-        return libro;
-    }
-
 }
