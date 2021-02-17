@@ -24,7 +24,7 @@ RUN apk update && apk add make && npm -g install mocha && make install
 
 #al final, para poner un usuario distinto a root
 #la imagen de node tiene el usuario node como opción alternativa al root
-USER node
+#USER node
 
 #para que cuando se cree y ejecute, se realice la instrucción de ejecutar
 #los tests
