@@ -1,4 +1,5 @@
 install:
+	npm install supertest
 	npm install
 
 test:
