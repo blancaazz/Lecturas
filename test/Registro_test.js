@@ -5,10 +5,10 @@ const { isMainThread } = require("worker_threads");
 
 const Dator = require("../src/dator")
 
-const libro_momo = new Libro("Momo", "Michael Ende", "Me ha gustado mucho", 8);
-const datos_momo = "Momo - Michael Ende - Me ha gustado mucho - 8";
-const libro_habitacion = new Libro("Una habitación propia", "Virginia Woolf", "Me ha parecido muy interesante", 8);
-const datos_habitacion = "Una habitación propia - Virginia Woolf - Me ha parecido muy interesante - 8";
+const libro_momo = new Libro("Momo-MichaelEnde", "Momo", "Michael Ende", "Me ha gustado mucho", 8);
+const datos_momo = "Momo-MichaelEnde - Momo - Michael Ende - Me ha gustado mucho - 8";
+const libro_habitacion = new Libro("Unahabitaciónpropia-VirginiaWoolf", "Una habitación propia", "Virginia Woolf", "Me ha parecido muy interesante", 8);
+const datos_habitacion = "Unahabitaciónpropia-VirginiaWoolf - Una habitación propia - Virginia Woolf - Me ha parecido muy interesante - 8";
 
 const nombre_momo = "Momo";
 const nombre_habitacion = "Una habitación propia"
@@ -30,8 +30,6 @@ describe("Registro libro", function(){
         it("Debería crear un registro", function(){
             var nuevo_dator = new Dator();
             var nuevo_registro = new Registro_libro(nuevo_dator);
-            console.log(nuevo_registro.as_string());
-            console.log(nuevo_dator);
             assert.equal(nuevo_registro.as_string(),"" , "Creado");
         });
     });

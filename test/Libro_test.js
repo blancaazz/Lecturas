@@ -12,8 +12,9 @@ describe("Libro", function(){
 
     describe("Crea", function(){
         it("Debería crear un libro", function(){
-            var nuevo_libro = new Libro("Momo", "Michael Ende", "Me ha gustado mucho", 8);
-            assert.equal(nuevo_libro.as_string(), "Momo - Michael Ende - Me ha gustado mucho - 8", "Creado");
+            var id = "Momo-MichaelEnde";
+            var nuevo_libro = new Libro(id, "Momo", "Michael Ende", "Me ha gustado mucho", 8);
+            assert.equal(nuevo_libro.as_string(), "Momo-MichaelEnde - Momo - Michael Ende - Me ha gustado mucho - 8", "Creado");
         });
     });
 });
