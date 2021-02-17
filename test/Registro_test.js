@@ -3,6 +3,8 @@ var Libro = require("../src/Libro.js");
 const assert = require("assert");
 const { isMainThread } = require("worker_threads");
 
+const Dator = require("../src/dator")
+
 const libro_momo = new Libro("Momo", "Michael Ende", "Me ha gustado mucho", 8);
 const datos_momo = "Momo - Michael Ende - Me ha gustado mucho - 8";
 const libro_habitacion = new Libro("Una habitación propia", "Virginia Woolf", "Me ha parecido muy interesante", 8);
@@ -11,7 +13,9 @@ const datos_habitacion = "Una habitación propia - Virginia Woolf - Me ha pareci
 const nombre_momo = "Momo";
 const nombre_habitacion = "Una habitación propia"
 
-var registro = new Registro_libro();
+var dator = new Dator();
+
+var registro = new Registro_libro(dator);
 const string_prueba = "Libro de la selva"
 
 describe("Registro libro", function(){
@@ -24,7 +28,10 @@ describe("Registro libro", function(){
 
     describe("Crea", function(){
         it("Debería crear un registro", function(){
-            var nuevo_registro = new Registro_libro();
+            var nuevo_dator = new Dator();
+            var nuevo_registro = new Registro_libro(nuevo_dator);
+            console.log(nuevo_registro.as_string());
+            console.log(nuevo_dator);
             assert.equal(nuevo_registro.as_string(),"" , "Creado");
         });
     });
@@ -33,6 +40,7 @@ describe("Registro libro", function(){
     describe("Registrar libro (HU1)", function(){
         it("Debería registrar un libro", function(){
             registro.registrarLibro(libro_momo);
+            console.log(registro.as_string());
             assert.equal(registro.as_string(), datos_momo , "Registrado");
         });
         it("No debería registrar un libro", function(){
