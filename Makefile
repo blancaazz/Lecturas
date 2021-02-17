@@ -2,6 +2,7 @@ install:
 	npm install
 
 test:
+
 	npm install -g supertest
 	npm test
 
