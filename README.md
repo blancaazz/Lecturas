@@ -59,8 +59,8 @@ Y he creado dos historias de usuario para cubrir una funcionalidad adicional (ve
 
 ## Microservicio
 
-La justifición del framework elegido y el diseño básico de las rutas de la API se encuentran en este [documento](docs/justificacion_ms). De manera resumida, decir que he hecho la api con nest.js, y luego, para hacer una comparativa y porque creo que se ajusta más a lo que quiero, la he hecho también con express.    
-De modo que la documentación asociada a nest.js se encuentra en el documento [nest_ms](docs/nest_ms) y la asociada a express está en el documento [express_ms](docs/express_ms)
+La justifición del framework elegido y el diseño básico de las rutas de la API se encuentran en este [documento](docs/justificacion_ms.md). De manera resumida, decir que he hecho la api con nest.js, y luego, para hacer una comparativa y porque creo que se ajusta más a lo que quiero, la he hecho también con express.    
+De modo que la documentación asociada a nest.js se encuentra en el documento [nest_ms](docs/nest_ms.md) y la asociada a express está en el documento [express_ms](docs/express_ms.md)
 
 ## Historias de usuario
 
