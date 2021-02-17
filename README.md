@@ -67,10 +67,10 @@ De modo que la documentación asociada a nest.js se encuentra en el documento [n
 [HU1](https://github.com/blancaazz/Lecturas/issues/4) que consiste en registrar un libro  
 [HU2](https://github.com/blancaazz/Lecturas/issues/5) que consiste en poder ver la información correspondiente a un libro  
 [HU3](https://github.com/blancaazz/Lecturas/issues/17) que consiste en ver una lista de libros que se haya guardado  
-[HU4](https://github.com/blancaazz/Lecturas/issues/20) que consiste en poder borrar un libro del registro 
-[HU5](https://github.com/blancaazz/Lecturas/issues/23) que consiste en obtener una lista de libros ordenados según la puntuación
-[HU6](https://github.com/blancaazz/Lecturas/issues/24) que consiste en obtener una lista de libros con únicamente el nombre
-[HU7](https://github.com/blancaazz/Lecturas/issues/25) que consiste en obtener una lista de libros recomnedados   
+[HU4](https://github.com/blancaazz/Lecturas/issues/20) que consiste en poder borrar un libro del registro   
+[HU5](https://github.com/blancaazz/Lecturas/issues/23) que consiste en obtener una lista de libros ordenados según la puntuación   
+[HU6](https://github.com/blancaazz/Lecturas/issues/24) que consiste en obtener una lista de libros con únicamente el nombre   
+[HU7](https://github.com/blancaazz/Lecturas/issues/25) que consiste en obtener una lista de libros recomnedados      
 [HU8](https://github.com/blancaazz/Lecturas/issues/26) que consiste en filtrar los libros recomendados por género
 
 
